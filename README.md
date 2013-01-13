@@ -31,7 +31,7 @@ Network Service appliance category API can be used to manage different categorie
 
 Normal Response Code(s): 200, 203
 
-Error Response Codes(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
+Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
 
 Example JSON response
 
@@ -41,12 +41,14 @@ Example JSON response
             {
                 "id": "52415800-8b69-11e0-9b19-734f6af67565",
                 "category": "firewall",
-                "description": "Firewall Security appliance"
+                "description": "Firewall Security appliance",
+                "shared":True
             },
             {
                 "id": "493454534-8b69-11e0-9b19-74f6af672345",
                 "category": "IPS",
-                "description": "Intrusion Prevention Appliance"	
+                "description": "Intrusion Prevention Appliance",
+                "shared":False	
             }
         ]
     }
@@ -69,7 +71,7 @@ Example JSON response
 
 Normal Response Code(s): 202
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
 
 This operation creates a network service category. Each category is identified by UUID.
 
@@ -85,6 +87,9 @@ The following table describes the required and optional attributes that you can 
 	<tr>
 		<td>description</td><td>Describe about the category</td><td>False</td>
 	</tr>
+        <tr>
+		<td>shared</td><td>Set the accessibility of the nsappliance category for other tenants</td>
+	</tr>
 </table>
 
 *Network service Appliance Category create JSON request*
@@ -92,7 +97,8 @@ The following table describes the required and optional attributes that you can 
 
     {
         "category": "firewall",
-        "description": "Firewall Security appliance"
+        "description": "Firewall Security appliance",
+        "shared":True
     }
 
 
@@ -103,7 +109,8 @@ The following table describes the required and optional attributes that you can 
         "id": "52415800-8b69-11e0-9b19-734f565bc83b",
         "tenant-id": "35415810-6b62-71e0-0b11-234f565bc422",    
         "category": "firewall",
-        "description": "Firewall Security appliance"
+        "description": "Firewall Security appliance",
+        "shared":True
     }
 
 
@@ -124,7 +131,7 @@ The following table describes the required and optional attributes that you can 
 
 Normal Response Code(s): 200, 203
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
 
 Specify the Network Service Appliance Category ID as id in the URI.
 
@@ -139,7 +146,8 @@ This operation returns the details of a specific Network Service Appliance Categ
         "id": "52415800-8b69-11e0-9b19-734f565bc83b",
         "tenant-id": "35415810-6b62-71e0-0b11-234f565bc422",
         "category": "firewall",
-        "description": "Firewall Security appliance"
+        "description": "Firewall Security appliance",
+        "shared":True
     }
 
 
@@ -161,7 +169,7 @@ This operation returns the details of a specific Network Service Appliance Categ
 
 Normal Response Code(s): 200
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
 
 This operation enables you to update the editable attributes of a specified Network Service.
 
@@ -175,6 +183,9 @@ The following table describes the attributes that you can specify in the request
 	</tr>
 	<tr>
 		<td>description</td><td>You can edit the description of this Network Service Appliance Category </td>
+	</tr>
+        <tr>
+		<td>shared</td><td>Set the accessibility of the nsappliance category for other tenants</td>
 	</tr>
 </table>
 
@@ -197,7 +208,7 @@ The following table describes the attributes that you can specify in the request
 
 Normal Response Code(s): 204
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
 
 This operation deletes a specified Network Service instance from the system.
 
@@ -226,7 +237,7 @@ The following set of APIs are to manage Images for the configured Network Servic
 </table>
 
 Normal Response Code(s): 200, 203
-Error Response Codes(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
+Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
 
 Example JSON response
 
@@ -286,7 +297,7 @@ Example JSON response
 
 Normal Response Code(s): 202
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
 
 This operation creates a Image mapping for a Network Service Appliance Category. 
 
@@ -308,7 +319,7 @@ The following table describes the required and optional attributes that you can 
 		<td>flavorRef</td><td>The flavor reference for the desired flavor for your NS Appliance.Specify as an ID or full URL. </td><td>True</td>
 		
 	</tr>
-		<td>metadata</td><td>Metadata key and value pairs. For information, see openstack docsâ€.</td><td>False</td>
+		<td>metadata</td><td>Metadata key and value pairs. For information, see openstack docsÃ¢â‚¬Â.</td><td>False</td>
 	</tr>
 	<tr>
 		<td>personality</td><td>File path and contents. For information, see openstack docs</td><td>False</td>
@@ -399,7 +410,7 @@ The following table describes the required and optional attributes that you can 
 
 Normal Response Code(s): 200, 203
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
 
 Specify the imagemap ID as {imagemap_id} and NS Appliance Category ID as cateogry_id in the URI.
 
@@ -466,7 +477,7 @@ This operation returns the details of a specific NS Appliance Image map by its I
 
 Normal Response Code(s): 200
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
 
 This operation enables you to update the editable attributes of a specified NS Appliance Category Image mapping.
 
@@ -503,7 +514,7 @@ The following table describes the attributes that you can specify in the request
 
 Normal Response Code(s): 204
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
 
 This operation deletes a specified Network Service Appliance Category imagemap from the system.
 
@@ -530,7 +541,7 @@ This operation does not require a request body or return a response body.
 </table>
 Normal Response Code(s): 200, 203
 
-Error Response Codes(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
+Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
 
 Example JSON response
 
@@ -579,7 +590,7 @@ Example JSON response
 
 Normal Response Code(s): 202
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
 
 This operation creates a NS Appliance Image map chain. Each Chain is identified by UUID.
 
@@ -646,7 +657,7 @@ The following table describes the required and optional attributes that you can 
 
 Normal Response Code(s): 200, 203
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
 
 Specify the Network Service Appliance Chain ID as id in the URI.
 
@@ -686,7 +697,7 @@ This operation returns the details of a specific Network Service Appliance Chain
 
 Normal Response Code(s): 200
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
 
 This operation updates the attributes of NS Appliance Chain of a specified chain_id.
 
@@ -724,7 +735,7 @@ The following table describes the attributes that you can specify in the request
 
 Normal Response Code(s): 204
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
 
 This operation deletes a specified Network Service Appliances Chain from the system.
 
@@ -740,253 +751,184 @@ This operation does not require a request body or return a response body.
 ##4.0  NS Rule List Management
 
 
-#####4.1 List network rule lists
+#####4.1 List Network Rules
+
 
 <table cellspacing = 30  >
 	<tr>
 		<th>Verb</th><th>URI</th><th>Description</th>
 	</tr>
 	<tr>
-		<td>GET </td><td>/nsappliances/rulelist </td><td>List all network rule lists </td>
+		<td>GET </td><td>/nsappliances/rules</td><td>List all network rules </td>
 	</tr>
 </table>
 
 
 Normal Response Code(s): 200, 203
 
-Error Response Codes(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
+Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
 
 *Example JSON response*
 
     {
-        "rulelist": [
+        "rules": [
             {
                 "id": "5241c37f-25b5-4d92-bb3c-a66b2c112789",
-                "name": "my custom rule list",
-                "rules": [
-                    {
-                        "name": "rule1",
-                        "l2": {
-                            "src-mac": [
-                                "9d:72:38:b4:0b:11",
-                                "2c:41:38:b4:0b:58"
-                            ],
-                            "dst-mac": [
-                                "any"
-                            ],
-                            "vlan": {
-                                "range": {
-                                    "start": 100,
-                                    "end": 200
-                                },
-                                "list": [
-                                    500,
-                                    560
-                                ]
-                            }
+                "name": "my custom rule1",
+                "prev": "None",
+                "next": "8be232a2-e63f-4638-ba83-fb8f129d8d9f",
+                "l2": {
+                    "src-mac": [
+                        "9d:72:38:b4:0b:11",
+                        "2c:41:38:b4:0b:58"
+                    ],
+                    "dst-mac": [
+                        "any"
+                    ],
+                    "vlan": {
+                        "range": {
+                            "start": 100,
+                            "end": 200
                         },
-                        "l3": {
-                            "version": 4,
-                            "src-addr": {
-                                "range": {
-                                    "start": "192.168.0.6",
-                                    "end": "192.168.0.0.110"
-                                },
-                                "list": [
-                                    "192.168.0.200",
-                                    "192.168.0.205"
-                                ],
-                                "net-info": {
-                                    "network": "10.1.10.0",
-                                    "netmask": "255.255.255.0"
-                                }
-                            },
-                            "dst-addr": {
-                                "range": {
-                                    "start": "192.168.1.6",
-                                    "end": "192.168.0.1.110"
-                                },
-                                "list": [
-                                    "192.168.1.200",
-                                    "192.168.1.205"
-                                ],
-                                "net-info": {
-                                    "network": "10.2.10.0",
-                                    "netmask": "255.255.255.0"
-                                }
-                            },
-                            "protocol": [
-                                "tcp",
-                                "udp"
-                            ]
-                        },
-                        "l4": {
-                            "src-port": {
-                                "range": {
-                                    "start": 2048,
-                                    "end": 3048
-                                },
-                                "list": [
-                                    6000,
-                                    6600
-                                ]
-                            },
-                            "dst-port": {
-                                "range": {
-                                    "start": 15,
-                                    "end": 2048
-                                },
-                                "list": [
-                                    8080,
-                                    5000
-                                ]
-                            }
-                        },
-                        "action": {
-                            "bypass": {
-                                "imagemap-ids": [
-                                    "283f1ddb-5262-4ec5-9fb7-cbf4d0eed79f",
-                                    "899aedc8-2ce8-436d-977c-94a7268fb0b0"
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "rule2",
-                        "l2": {
-                            "src-mac": [
-                                "any"
-                            ],
-                            "dst-mac": [
-                                "any"
-                            ],
-                            "vlan": {
-                                "list": [
-                                    "any"
-                                ]
-                            }
-                        },
-                        "l3": {
-                            "version": 4,
-                            "src-addr": {
-                                "range": {
-                                    "start": "192.168.0.6",
-                                    "end": "192.168.0.0.110"
-                                },
-                                "list": [
-                                    "192.168.0.200",
-                                    "192.168.0.205"
-                                ],
-                                "net-info": {
-                                    "network": "10.1.10.0",
-                                    "netmask": "255.255.255.0"
-                                }
-                            },
-                            "dst-addr": {
-                                "list": [
-                                    "any"
-                                ]
-                            },
-                            "protocol": [
-                                "any"
-                            ]
-                        },
-                        "l4": {
-                            "src-port": {
-                                "list": [
-                                    "any"
-                                ]
-                            },
-                            "dst-port": {
-                                "range": {
-                                    "start": 15,
-                                    "end": 2048
-                                },
-                                "list": [
-                                    8080,
-                                    5000
-                                ]
-                            }
-                        },
-                        "action": {
-                            "bypass": {
-                                "imagemap-ids": [
-                                    "74c0be55-80eb-4fe6-835e-62b710982381"
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "name": "rule3",
-                        "l2": {
-                            "src-mac": [
-                                "any"
-                            ],
-                            "dst-mac": [
-                                "any"
-                            ],
-                            "vlan": {
-                                "list": [
-                                    "any"
-                                ]
-                            }
-                        },
-                        "l3": {
-                            "version": 4,
-                            "src-addr": {
-                                "range": {
-                                    "start": "192.168.0.6",
-                                    "end": "192.168.0.0.110"
-                                },
-                                "list": [
-                                    "192.168.0.200",
-                                    "192.168.0.205"
-                                ],
-                                "net-info": {
-                                    "network": "10.1.10.0",
-                                    "netmask": "255.255.255.0"
-                                }
-                            },
-                            "dst-addr": {
-                                "list": [
-                                    "any"
-                                ]
-                            },
-                            "protocol": [
-                                "icmp"
-                            ]
-                        },
-                        "icmp": {
-                            "type": {
-                                "range": {
-                                    "start": 0,
-                                    "end": 10
-                                },
-                                "list": [
-                                    31,
-                                    35
-                                ]
-                            },
-                            "code": {
-                                "range": {
-                                    "start": 0,
-                                    "end": 9
-                                },
-                                "list": [
-                                    12,
-                                    14
-                                ]
-                            }
-                        },
-                        "action": {
-                            "bypass": {
-                                "imagemap-ids": [
-                                    "any"
-                                ]
-                            }
-                        }
+                        "list": [
+                            500,
+                            560
+                        ]
                     }
-                ]
+                },
+                "l3": {
+                    "version": 4,
+                    "src-addr": {
+                        "range": {
+                            "start": "192.168.0.6",
+                            "end": "192.168.0.0.110"
+                        },
+                        "list": [
+                            "192.168.0.200",
+                            "192.168.0.205"
+                        ],
+                        "net-info": {
+                            "network": "10.1.10.0",
+                            "netmask": "255.255.255.0"
+                        }
+                    },
+                    "dst-addr": {
+                        "range": {
+                            "start": "192.168.1.6",
+                            "end": "192.168.0.1.110"
+                        },
+                        "list": [
+                            "192.168.1.200",
+                            "192.168.1.205"
+                        ],
+                        "net-info": {
+                            "network": "10.2.10.0",
+                            "netmask": "255.255.255.0"
+                        }
+                    },
+                    "protocol": [
+                        "tcp",
+                        "udp"
+                    ]
+                },
+                "l4": {
+                    "src-port": {
+                        "range": {
+                            "start": 2048,
+                            "end": 3048
+                        },
+                        "list": [
+                            6000,
+                            6600
+                        ]
+                    },
+                    "dst-port": {
+                        "range": {
+                            "start": 15,
+                            "end": 2048
+                        },
+                        "list": [
+                            8080,
+                            5000
+                        ]
+                    }
+                },
+                "action": {
+                    "bypass": {
+                        "imagemap-ids": [
+                            "283f1ddb-5262-4ec5-9fb7-cbf4d0eed79f",
+                            "899aedc8-2ce8-436d-977c-94a7268fb0b0"
+                        ]
+                    }
+                }
+            },
+            {
+                "id": "77b4b4b2-5d80-41d6-a10f-fa5e0fa75a2d",
+                "name": "my custom rule2",
+                "prev": "5241c37f-25b5-4d92-bb3c-a66b2c112789",
+                "next":"None",
+                "l2": {
+                    "src-mac": [
+                        "any"
+                    ],
+                    "dst-mac": [
+                        "any"
+                    ],
+                    "vlan": {
+                        "list": [
+                            "any"
+                        ]
+                    }
+                },
+                "l3": {
+                    "version": 4,
+                    "src-addr": {
+                        "range": {
+                            "start": "192.168.0.6",
+                            "end": "192.168.0.0.110"
+                        },
+                        "list": [
+                            "192.168.0.200",
+                            "192.168.0.205"
+                        ],
+                        "net-info": {
+                            "network": "10.1.10.0",
+                            "netmask": "255.255.255.0"
+                        }
+                    },
+                    "dst-addr": {
+                        "list": [
+                            "any"
+                        ]
+                    },
+                    "protocol": [
+                        "any"
+                    ]
+                },
+                "l4": {
+                    "src-port": {
+                        "list": [
+                            "any"
+                        ]
+                    },
+                    "dst-port": {
+                        "range": {
+                            "start": 15,
+                            "end": 2048
+                        },
+                        "list": [
+                            8080,
+                            5000
+                        ]
+                    }
+                },
+                "action": {
+                    "bypass": {
+                        "imagemap-ids": [
+                            "74c0be55-80eb-4fe6-835e-62b710982381"
+                        ]
+                    }
+                }
             }
         ]
     }
@@ -997,23 +939,22 @@ Error Response Codes(s): computeFault (400, 500, â€¦), serviceUnavailable (5
 
 
 
-
-#####4.2 Create a Network rule list
+#####4.2 Create a Network rule
 
 <table cellspacing = 30  >
 	<tr>
 		<th>Verb</th><th>URI</th><th>Description</th>
 	</tr>
 	<tr>
-		<td>POST </td><td>/nsappliances/rulelist </td><td>Create a network rule lists </td>
+		<td>POST </td><td>/nsappliances/rules </td><td>Create a network rule</td>
 	</tr>
 </table>
 
 Normal Response Code(s): 202
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
 
-This operation creates a network rule list. Each rule list is identified by UUID.
+This operation creates a network rule. Each rule is identified by UUID.
 
 Following table lists the description of the fields used in the JSON Request.
 Note that rules are prioritized as per the order in the JSON request.
@@ -1022,6 +963,15 @@ Note that rules are prioritized as per the order in the JSON request.
 <table cellspacing = 30  >
 	<tr>
 		<th>Name</th><th>Description</th><th>Required</th>
+	</tr>
+	<tr>
+		<td>name</td><td>Name of the Network rule list </td><td>False</td>
+	</tr>
+	<tr>
+		<td>prev</td><td>UUID of previous rule. This along with next field helps to insert a rule between those rules. If prev is None then this is the first rule</td><td>False</td>
+	</tr>
+	<tr>
+		<td>next</td><td>UUID of the next rule. Next will be None for the last rule</td><td>False</td>
 	</tr>
 	<tr>
 		<td>name</td><td>Name of the Network rule list </td><td>False</td>
@@ -1065,740 +1015,329 @@ Note that rules are prioritized as per the order in the JSON request.
 *Example JSON Request*
 
     {
-        "name": "my custom rule list",
-        "rules": [
-            {
-		"name" : "rule1",
-                "l2": {
-                    "src-mac": [
-                        "9d:72:38:b4:0b:11",
-                        "2c:41:38:b4:0b:58"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "range": {
-                            "start": 100,
-                            "end": 200
-                        },
-                        "list": [
-                            500,
-                            560
-                        ]
-                    }
+        "name": "my custom rule1",
+        "prev":"de598b3a-aeef-4fe1-ba32-479be8372a71",
+        "next":"759e5dcf-5a8a-4b0a-b25f-373437770065",
+        "l2": {
+            "src-mac": [
+                "9d:72:38:b4:0b:11",
+                "2c:41:38:b4:0b:58"
+            ],
+            "dst-mac": [
+                "any"
+            ],
+            "vlan": {
+                "range": {
+                    "start": 100,
+                    "end": 200
                 },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "range": {
-                            "start": "192.168.1.6",
-                            "end": "192.168.0.1.110"
-                        },
-                        "list": [
-                            "192.168.1.200",
-                            "192.168.1.205"
-                        ],
-                        "net-info": {
-                            "network": "10.2.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "protocol": [
-                        "tcp",
-                        "udp"
-                    ]
-                },
-                "l4": {
-                    "src-port": {
-                        "range": {
-                            "start": 2048,
-                            "end": 3048
-                        },
-                        "list": [
-                            6000,
-                            6600
-                        ]
-                    },
-                    "dst-port": {
-                        "range": {
-                            "start": 15,
-                            "end": 2048
-                        },
-                        "list": [
-                            8080,
-                            5000
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "283f1ddb-5262-4ec5-9fb7-cbf4d0eed79f",
-                            "899aedc8-2ce8-436d-977c-94a7268fb0b0"
-                        ]
-                    }
-                }
-            },
-            {
-		"name" : "rule2",
-                "l2": {
-                    "src-mac": [
-                        "any"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "list": [
-                            "any"
-                        ]
-                    }
-                },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "protocol": [
-                        "any"
-                    ]
-                },
-                "l4": {
-                    "src-port": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "dst-port": {
-                        "range": {
-                            "start": 15,
-                            "end": 2048
-                        },
-                        "list": [
-                            8080,
-                            5000
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "74c0be55-80eb-4fe6-835e-62b710982381"
-                        ]
-                    }
-                }
-            },
-            {
-		"name" : "rule3",
-                "l2": {
-                    "src-mac": [
-                        "any"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "list": [
-                            "any"
-                        ]
-                    }
-                },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "protocol": [
-                        "icmp"
-                    ]
-                },
-                "icmp": {
-                    "type": {
-                        "range": {
-                            "start": 0,
-                            "end": 10
-                        },
-                        "list": [
-                            31,
-                            35
-                        ]
-                    },
-                    "code": {
-                        "range": {
-                            "start": 0,
-                            "end": 9
-                        },
-                        "list": [
-                            12,
-                            14
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "any"
-                        ]
-                    }
-                }
+                "list": [
+                    500,
+                    560
+                ]
             }
-        ]
+        },
+        "l3": {
+            "version": 4,
+            "src-addr": {
+                "range": {
+                    "start": "192.168.0.6",
+                    "end": "192.168.0.0.110"
+                },
+                "list": [
+                    "192.168.0.200",
+                    "192.168.0.205"
+                ],
+                "net-info": {
+                    "network": "10.1.10.0",
+                    "netmask": "255.255.255.0"
+                }
+            },
+            "dst-addr": {
+                "range": {
+                    "start": "192.168.1.6",
+                    "end": "192.168.0.1.110"
+                },
+                "list": [
+                    "192.168.1.200",
+                    "192.168.1.205"
+                ],
+                "net-info": {
+                    "network": "10.2.10.0",
+                    "netmask": "255.255.255.0"
+                }
+            },
+            "protocol": [
+                "tcp",
+                "udp"
+            ]
+        },
+        "l4": {
+            "src-port": {
+                "range": {
+                    "start": 2048,
+                    "end": 3048
+                },
+                "list": [
+                    6000,
+                    6600
+                ]
+            },
+            "dst-port": {
+                "range": {
+                    "start": 15,
+                    "end": 2048
+                },
+                "list": [
+                    8080,
+                    5000
+                ]
+            }
+        },
+        "action": {
+            "bypass": {
+                "imagemap-ids": [
+                    "283f1ddb-5262-4ec5-9fb7-cbf4d0eed79f",
+                    "899aedc8-2ce8-436d-977c-94a7268fb0b0"
+                ]
+            }
+        }
     }
-                     
+
+
+
 *Example JSON Response*
 
     {
-    
-        "id": "3a5a24da-2e6c-4c71-8237-2182ebf4f2ea",
-        "name": "my custom rule list",
-        "rules": [
-            {
-                "l2": {
-                    "src-mac": [
-                        "9d:72:38:b4:0b:11",
-                        "2c:41:38:b4:0b:58"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "range": {
-                            "start": 100,
-                            "end": 200
-                        },
-                        "list": [
-                            500,
-                            560
-                        ]
-                    }
+        "id": "5241c37f-25b5-4d92-bb3c-a66b2c112789",
+        "name": "my custom rule1",
+        "prev":"de598b3a-aeef-4fe1-ba32-479be8372a71",
+        "next":"759e5dcf-5a8a-4b0a-b25f-373437770065",
+        "l2": {
+            "src-mac": [
+                "9d:72:38:b4:0b:11",
+                "2c:41:38:b4:0b:58"
+            ],
+            "dst-mac": [
+                "any"
+            ],
+            "vlan": {
+                "range": {
+                    "start": 100,
+                    "end": 200
                 },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "range": {
-                            "start": "192.168.1.6",
-                            "end": "192.168.0.1.110"
-                        },
-                        "list": [
-                            "192.168.1.200",
-                            "192.168.1.205"
-                        ],
-                        "net-info": {
-                            "network": "10.2.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "protocol": [
-                        "tcp",
-                        "udp"
-                    ]
-                },
-                "l4": {
-                    "src-port": {
-                        "range": {
-                            "start": 2048,
-                            "end": 3048
-                        },
-                        "list": [
-                            6000,
-                            6600
-                        ]
-                    },
-                    "dst-port": {
-                        "range": {
-                            "start": 15,
-                            "end": 2048
-                        },
-                        "list": [
-                            8080,
-                            5000
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "283f1ddb-5262-4ec5-9fb7-cbf4d0eed79f",
-                            "899aedc8-2ce8-436d-977c-94a7268fb0b0"
-                        ]
-                    }
-                }
-            },
-            {
-                "l2": {
-                    "src-mac": [
-                        "any"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "list": [
-                            "any"
-                        ]
-                    }
-                },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "protocol": [
-                        "any"
-                    ]
-                },
-                "l4": {
-                    "src-port": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "dst-port": {
-                        "range": {
-                            "start": 15,
-                            "end": 2048
-                        },
-                        "list": [
-                            8080,
-                            5000
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "74c0be55-80eb-4fe6-835e-62b710982381"
-                        ]
-                    }
-                }
-            },
-            {
-                "l2": {
-                    "src-mac": [
-                        "any"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "list": [
-                            "any"
-                        ]
-                    }
-                },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "protocol": [
-                        "icmp"
-                    ]
-                },
-                "icmp": {
-                    "type": {
-                        "range": {
-                            "start": 0,
-                            "end": 10
-                        },
-                        "list": [
-                            31,
-                            35
-                        ]
-                    },
-                    "code": {
-                        "range": {
-                            "start": 0,
-                            "end": 9
-                        },
-                        "list": [
-                            12,
-                            14
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "any"
-                        ]
-                    }
-                }
+                "list": [
+                    500,
+                    560
+                ]
             }
-        ]
+        },
+        "l3": {
+            "version": 4,
+            "src-addr": {
+                "range": {
+                    "start": "192.168.0.6",
+                    "end": "192.168.0.0.110"
+                },
+                "list": [
+                    "192.168.0.200",
+                    "192.168.0.205"
+                ],
+                "net-info": {
+                    "network": "10.1.10.0",
+                    "netmask": "255.255.255.0"
+                }
+            },
+            "dst-addr": {
+                "range": {
+                    "start": "192.168.1.6",
+                    "end": "192.168.0.1.110"
+                },
+                "list": [
+                    "192.168.1.200",
+                    "192.168.1.205"
+                ],
+                "net-info": {
+                    "network": "10.2.10.0",
+                    "netmask": "255.255.255.0"
+                }
+            },
+            "protocol": [
+                "tcp",
+                "udp"
+            ]
+        },
+        "l4": {
+            "src-port": {
+                "range": {
+                    "start": 2048,
+                    "end": 3048
+                },
+                "list": [
+                    6000,
+                    6600
+                ]
+            },
+            "dst-port": {
+                "range": {
+                    "start": 15,
+                    "end": 2048
+                },
+                "list": [
+                    8080,
+                    5000
+                ]
+            }
+        },
+        "action": {
+            "bypass": {
+                "imagemap-ids": [
+                    "283f1ddb-5262-4ec5-9fb7-cbf4d0eed79f",
+                    "899aedc8-2ce8-436d-977c-94a7268fb0b0"
+                ]
+            }
+        }
     }
 
-#####4.3  Get details of a Network Rule list
+#####4.3  Get details of a Network Rule
 
 <table cellspacing = 30  >
 	<tr>
 		<th>Verb</th><th>URI</th><th>Description</th>
 	</tr>
 	<tr>
-		<td>GET </td><td>/nsappliances/rulelist/{rulelist_id} </td><td> List details of a specified Network rule list</td>
+		<td>GET </td><td>/nsappliances/rules/{rule_id} </td><td> List details of a specified Network rule</td>
 	</tr>
 </table>
 
 Normal Response Code(s): 200, 203
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
 
-Specify the Network Rule list ID as id in the URI.
+Specify the Network Rule ID as id in the URI.
 
 This operation does not require a request body.
 
-This operation returns the details of a specific Network Rule list by its ID
+This operation returns the details of a specific Network Rule by its ID
 
 *Example JSON response*
 
 
 
-   {
-    
-        "id": "3a5a24da-2e6c-4c71-8237-2182ebf4f2ea",
-        "name": "my custom rule list",
-        "rules": [
-            {
-		"name" : "rule1",
-                "l2": {
-                    "src-mac": [
-                        "9d:72:38:b4:0b:11",
-                        "2c:41:38:b4:0b:58"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "range": {
-                            "start": 100,
-                            "end": 200
-                        },
-                        "list": [
-                            500,
-                            560
-                        ]
-                    }
+
+    {
+        "id": "5241c37f-25b5-4d92-bb3c-a66b2c112789",
+        "name": "my custom rule1",
+        "prev":"de598b3a-aeef-4fe1-ba32-479be8372a71",
+        "next":"759e5dcf-5a8a-4b0a-b25f-373437770065",
+        "l2": {
+            "src-mac": [
+                "9d:72:38:b4:0b:11",
+                "2c:41:38:b4:0b:58"
+            ],
+            "dst-mac": [
+                "any"
+            ],
+            "vlan": {
+                "range": {
+                    "start": 100,
+                    "end": 200
                 },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "range": {
-                            "start": "192.168.1.6",
-                            "end": "192.168.0.1.110"
-                        },
-                        "list": [
-                            "192.168.1.200",
-                            "192.168.1.205"
-                        ],
-                        "net-info": {
-                            "network": "10.2.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "protocol": [
-                        "tcp",
-                        "udp"
-                    ]
-                },
-                "l4": {
-                    "src-port": {
-                        "range": {
-                            "start": 2048,
-                            "end": 3048
-                        },
-                        "list": [
-                            6000,
-                            6600
-                        ]
-                    },
-                    "dst-port": {
-                        "range": {
-                            "start": 15,
-                            "end": 2048
-                        },
-                        "list": [
-                            8080,
-                            5000
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "283f1ddb-5262-4ec5-9fb7-cbf4d0eed79f",
-                            "899aedc8-2ce8-436d-977c-94a7268fb0b0"
-                        ]
-                    }
-                }
-            },
-            {
-		"name" : "rule2",
-                "l2": {
-                    "src-mac": [
-                        "any"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "list": [
-                            "any"
-                        ]
-                    }
-                },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "protocol": [
-                        "any"
-                    ]
-                },
-                "l4": {
-                    "src-port": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "dst-port": {
-                        "range": {
-                            "start": 15,
-                            "end": 2048
-                        },
-                        "list": [
-                            8080,
-                            5000
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "74c0be55-80eb-4fe6-835e-62b710982381"
-                        ]
-                    }
-                }
-            },
-            {
-		"name" : "rule3",
-                "l2": {
-                    "src-mac": [
-                        "any"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "list": [
-                            "any"
-                        ]
-                    }
-                },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "protocol": [
-                        "icmp"
-                    ]
-                },
-                "icmp": {
-                    "type": {
-                        "range": {
-                            "start": 0,
-                            "end": 10
-                        },
-                        "list": [
-                            31,
-                            35
-                        ]
-                    },
-                    "code": {
-                        "range": {
-                            "start": 0,
-                            "end": 9
-                        },
-                        "list": [
-                            12,
-                            14
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "any"
-                        ]
-                    }
-                }
+                "list": [
+                    500,
+                    560
+                ]
             }
-        ]
+        },
+        "l3": {
+            "version": 4,
+            "src-addr": {
+                "range": {
+                    "start": "192.168.0.6",
+                    "end": "192.168.0.0.110"
+                },
+                "list": [
+                    "192.168.0.200",
+                    "192.168.0.205"
+                ],
+                "net-info": {
+                    "network": "10.1.10.0",
+                    "netmask": "255.255.255.0"
+                }
+            },
+            "dst-addr": {
+                "range": {
+                    "start": "192.168.1.6",
+                    "end": "192.168.0.1.110"
+                },
+                "list": [
+                    "192.168.1.200",
+                    "192.168.1.205"
+                ],
+                "net-info": {
+                    "network": "10.2.10.0",
+                    "netmask": "255.255.255.0"
+                }
+            },
+            "protocol": [
+                "tcp",
+                "udp"
+            ]
+        },
+        "l4": {
+            "src-port": {
+                "range": {
+                    "start": 2048,
+                    "end": 3048
+                },
+                "list": [
+                    6000,
+                    6600
+                ]
+            },
+            "dst-port": {
+                "range": {
+                    "start": 15,
+                    "end": 2048
+                },
+                "list": [
+                    8080,
+                    5000
+                ]
+            }
+        },
+        "action": {
+            "bypass": {
+                "imagemap-ids": [
+                    "283f1ddb-5262-4ec5-9fb7-cbf4d0eed79f",
+                    "899aedc8-2ce8-436d-977c-94a7268fb0b0"
+                ]
+            }
+        }
     }
 
 
-
-#####4.4 Update a network rule list
+#####4.4 Update a network rule
 
 <table cellspacing = 30  >
 	<tr>
 		<th>Verb</th><th>URI</th><th>Description</th>
 	</tr>
 	<tr>
-		<td>PUT </td><td> /nsapplainces/rulelist/{rulelist_id} </td><td>Update a specified Network rule list</td>
+		<td>PUT </td><td> /nsapplainces/rules/{rule_id} </td><td>Update a specified Network rule</td>
 	</tr>
 </table>
 
 
 Normal Response Code(s): 200
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
 
-This operation updates the attributes of NS Appliance Rule list of a specified rulelist_id
+This operation updates the attributes of NS Appliance Rule of a specified rule_id
 
 The following table describes the attributes that you can specify in the request body:
 
-An important use of PUT on this object is to change the rule priorities. User can shuffle the rules and update them as per the needs.
+
 
 <table cellspacing = 30  >
 	<tr>
@@ -1806,6 +1345,12 @@ An important use of PUT on this object is to change the rule priorities. User ca
 	</tr>
 	<tr>
 		<td>name</td><td>Name of the Network rule list </td><td>False</td>
+	</tr>
+	<tr>
+		<td>prev</td><td>UUID of previous rule. This along with next field helps to insert a rule between those rules. If prev is None then this is the first rule</td><td>False</td>
+	</tr>
+	<tr>
+		<td>next</td><td>UUID of the next rule. Next will be None for the last rule</td><td>False</td>
 	</tr>
 	<tr>
 		<td>src-mac</td><td>Source MAC address. Specify a list of MACs </td><td>False</td>
@@ -1843,468 +1388,112 @@ An important use of PUT on this object is to change the rule priorities. User ca
 
 </table>
 
-Example JSON Request
+*Example JSON Request*
 
-   {
-    
-     
-        "name": "my rule list",
-        "rules": [
-            
-            {
-                "name": "rule-1",
-                "l2": {
-                    "src-mac": [
-                        "any"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "list": [
-                            "any"
-                        ]
-                    }
-                },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "protocol": [
-                        "any"
-                    ]
-                },
-                "l4": {
-                    "src-port": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "dst-port": {
-                        "range": {
-                            "start": 15,
-                            "end": 2048
-                        },
-                        "list": [
-                            8080,
-                            5000
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "74c0be55-80eb-4fe6-835e-62b710982381"
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "rule2",
-                "l2": {
-                    "src-mac": [
-                        "any"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "list": [
-                            "any"
-                        ]
-                    }
-                },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "protocol": [
-                        "icmp"
-                    ]
-                },
-                "icmp": {
-                    "type": {
-                        "range": {
-                            "start": 0,
-                            "end": 10
-                        },
-                        "list": [
-                            31,
-                            35
-                        ]
-                    },
-                    "code": {
-                        "range": {
-                            "start": 0,
-                            "end": 9
-                        },
-                        "list": [
-                            12,
-                            14
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "any"
-                        ]
-                    }
-                }
-            },
-            {
-                "name" :"rule3",
-                "l2": {
-                    "src-mac": [
-                        "9d:72:38:b4:0b:11",
-                        "2c:41:38:b4:0b:58"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "range": {
-                            "start": 100,
-                            "end": 200
-                        },
-                        "list": [
-                            500,
-                            560
-                        ]
-                    }
-                },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "range": {
-                            "start": "192.168.1.6",
-                            "end": "192.168.0.1.110"
-                        },
-                        "list": [
-                            "192.168.1.200",
-                            "192.168.1.205"
-                        ],
-                        "net-info": {
-                            "network": "10.2.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "protocol": [
-                        "tcp",
-                        "udp"
-                    ]
-                },
-                "l4": {
-                    "src-port": {
-                        "range": {
-                            "start": 2048,
-                            "end": 3048
-                        },
-                        "list": [
-                            6000,
-                            6600
-                        ]
-                    },
-                    "dst-port": {
-                        "range": {
-                            "start": 15,
-                            "end": 2048
-                        },
-                        "list": [
-                            8080,
-                            5000
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "283f1ddb-5262-4ec5-9fb7-cbf4d0eed79f",
-                            "899aedc8-2ce8-436d-977c-94a7268fb0b0"
-                        ]
-                    }
-                }
-            }
-        ]
+
+
+
+    {
+        "id": "5241c37f-25b5-4d92-bb3c-a66b2c112789",
+        "name": "my custom rule1",
+        "prev":"None",
+        "next":"759e5dcf-5a8a-4b0a-b25f-373437770065",
     }
+
 
 *Example JSON Response*
 
-   {
-    
-        "id": "3a5a24da-2e6c-4c71-8237-2182ebf4f2ea",
-        "name": "my custom rule list",
-            {
-                "name": "rule-1",
-                "l2": {
-                    "src-mac": [
-                        "any"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "list": [
-                            "any"
-                        ]
-                    }
+
+
+    {
+        "id": "5241c37f-25b5-4d92-bb3c-a66b2c112789",
+        "name": "my custom rule1",
+        "prev":"None",
+        "next":"759e5dcf-5a8a-4b0a-b25f-373437770065",
+        "l2": {
+            "src-mac": [
+                "9d:72:38:b4:0b:11",
+                "2c:41:38:b4:0b:58"
+            ],
+            "dst-mac": [
+                "any"
+            ],
+            "vlan": {
+                "range": {
+                    "start": 100,
+                    "end": 200
                 },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "protocol": [
-                        "any"
-                    ]
-                },
-                "l4": {
-                    "src-port": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "dst-port": {
-                        "range": {
-                            "start": 15,
-                            "end": 2048
-                        },
-                        "list": [
-                            8080,
-                            5000
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "74c0be55-80eb-4fe6-835e-62b710982381"
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "rule2",
-                "l2": {
-                    "src-mac": [
-                        "any"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "list": [
-                            "any"
-                        ]
-                    }
-                },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "list": [
-                            "any"
-                        ]
-                    },
-                    "protocol": [
-                        "icmp"
-                    ]
-                },
-                "icmp": {
-                    "type": {
-                        "range": {
-                            "start": 0,
-                            "end": 10
-                        },
-                        "list": [
-                            31,
-                            35
-                        ]
-                    },
-                    "code": {
-                        "range": {
-                            "start": 0,
-                            "end": 9
-                        },
-                        "list": [
-                            12,
-                            14
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "any"
-                        ]
-                    }
-                }
-            },
-            {
-                "name" :"rule3",
-                "l2": {
-                    "src-mac": [
-                        "9d:72:38:b4:0b:11",
-                        "2c:41:38:b4:0b:58"
-                    ],
-                    "dst-mac": [
-                        "any"
-                    ],
-                    "vlan": {
-                        "range": {
-                            "start": 100,
-                            "end": 200
-                        },
-                        "list": [
-                            500,
-                            560
-                        ]
-                    }
-                },
-                "l3": {
-                    "version": 4,
-                    "src-addr": {
-                        "range": {
-                            "start": "192.168.0.6",
-                            "end": "192.168.0.0.110"
-                        },
-                        "list": [
-                            "192.168.0.200",
-                            "192.168.0.205"
-                        ],
-                        "net-info": {
-                            "network": "10.1.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "dst-addr": {
-                        "range": {
-                            "start": "192.168.1.6",
-                            "end": "192.168.0.1.110"
-                        },
-                        "list": [
-                            "192.168.1.200",
-                            "192.168.1.205"
-                        ],
-                        "net-info": {
-                            "network": "10.2.10.0",
-                            "netmask": "255.255.255.0"
-                        }
-                    },
-                    "protocol": [
-                        "tcp",
-                        "udp"
-                    ]
-                },
-                "l4": {
-                    "src-port": {
-                        "range": {
-                            "start": 2048,
-                            "end": 3048
-                        },
-                        "list": [
-                            6000,
-                            6600
-                        ]
-                    },
-                    "dst-port": {
-                        "range": {
-                            "start": 15,
-                            "end": 2048
-                        },
-                        "list": [
-                            8080,
-                            5000
-                        ]
-                    }
-                },
-                "action": {
-                    "bypass": {
-                        "imagemap-ids": [
-                            "283f1ddb-5262-4ec5-9fb7-cbf4d0eed79f",
-                            "899aedc8-2ce8-436d-977c-94a7268fb0b0"
-                        ]
-                    }
-                }
+                "list": [
+                    500,
+                    560
+                ]
             }
-        ]
+        },
+        "l3": {
+            "version": 4,
+            "src-addr": {
+                "range": {
+                    "start": "192.168.0.6",
+                    "end": "192.168.0.0.110"
+                },
+                "list": [
+                    "192.168.0.200",
+                    "192.168.0.205"
+                ],
+                "net-info": {
+                    "network": "10.1.10.0",
+                    "netmask": "255.255.255.0"
+                }
+            },
+            "dst-addr": {
+                "range": {
+                    "start": "192.168.1.6",
+                    "end": "192.168.0.1.110"
+                },
+                "list": [
+                    "192.168.1.200",
+                    "192.168.1.205"
+                ],
+                "net-info": {
+                    "network": "10.2.10.0",
+                    "netmask": "255.255.255.0"
+                }
+            },
+            "protocol": [
+                "tcp",
+                "udp"
+            ]
+        },
+        "l4": {
+            "src-port": {
+                "range": {
+                    "start": 2048,
+                    "end": 3048
+                },
+                "list": [
+                    6000,
+                    6600
+                ]
+            },
+            "dst-port": {
+                "range": {
+                    "start": 15,
+                    "end": 2048
+                },
+                "list": [
+                    8080,
+                    5000
+                ]
+            }
+        },
+        "action": {
+            "bypass": {
+                "imagemap-ids": [
+                    "283f1ddb-5262-4ec5-9fb7-cbf4d0eed79f",
+                    "899aedc8-2ce8-436d-977c-94a7268fb0b0"
+                ]
+            }
+        }
     }
 
 
@@ -2319,9 +1508,231 @@ Example JSON Request
 	</tr>
 </table>
 
+
+
+
+
+#####4.6 List network rule lists
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Verb</th><th>URI</th><th>Description</th>
+	</tr>
+	<tr>
+		<td>GET </td><td>/nsappliances/rulelist </td><td>List all network rule lists </td>
+	</tr>
+</table>
+
+
+Normal Response Code(s): 200, 203
+
+Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
+
+*Example JSON response*
+
+    {
+        "rulelist": [
+            {
+                "id": "5241c37f-25b5-4d92-bb3c-a66b2c112789",
+                "name": "my custom rule list",
+                "rules": [
+                    "fe33b4d6-e62a-47dd-a083-addf6f3708a3",
+                    "3443c5bb-891c-4c10-a065-347f5a4b021c",
+                    "9426cc53-88c9-49dd-a17f-95ed1272d0f0",
+                    "f2f596ef-426b-4157-800c-062078ee24c8"
+                ]
+            },
+            {
+                "id": "ac8fd42a-a4d8-4f6a-96bd-eebeb8425a13",
+                "name": "my simple rule list",
+                "rules": [
+                    "fe33b4d6-e62a-47dd-a083-addf6f3708a3",
+                    "3443c5bb-891c-4c10-a065-347f5a4b021c"
+                ]
+            }
+        ]
+    }
+
+
+
+
+
+
+
+
+#####4.7 Create a Network rule list
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Verb</th><th>URI</th><th>Description</th>
+	</tr>
+	<tr>
+		<td>POST </td><td>/nsappliances/rulelist </td><td>Create a network rule lists </td>
+	</tr>
+</table>
+
+Normal Response Code(s): 202
+
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
+
+This operation creates a network rule list. Each rule list is identified by UUID.
+
+Following table lists the description of the fields used in the JSON Request.
+Note that rules are prioritized as per the order in the JSON request.
+
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Name</th><th>Description</th><th>Required</th>
+	</tr>
+	<tr>
+		<td>name</td><td>Name of the Network rule list </td><td>No</td>
+	</tr>
+	<tr>
+		<td>rules</td><td>List of network rules in the order of priority</td><td>Yes</td>
+	</tr>
+
+</table>
+
+*Example JSON Request*
+
+    {
+        "name": "my custom rule list",
+        "rules": [
+            "fe33b4d6-e62a-47dd-a083-addf6f3708a3",
+            "3443c5bb-891c-4c10-a065-347f5a4b021c",
+            "9426cc53-88c9-49dd-a17f-95ed1272d0f0",
+            "f2f596ef-426b-4157-800c-062078ee24c8"
+        ]
+    }
+
+*Example JSON Response*
+
+    {
+        "id": "5241c37f-25b5-4d92-bb3c-a66b2c112789",
+        "name": "my custom rule list",
+        "rules": [
+            "fe33b4d6-e62a-47dd-a083-addf6f3708a3",
+            "3443c5bb-891c-4c10-a065-347f5a4b021c",
+            "9426cc53-88c9-49dd-a17f-95ed1272d0f0",
+            "f2f596ef-426b-4157-800c-062078ee24c8"
+        ]
+    }
+
+
+#####4.8  Get details of a Network Rule list
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Verb</th><th>URI</th><th>Description</th>
+	</tr>
+	<tr>
+		<td>GET </td><td>/nsappliances/rulelist/{rulelist_id} </td><td> List details of a specified Network rule list</td>
+	</tr>
+</table>
+
+Normal Response Code(s): 200, 203
+
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+
+Specify the Network Rule list ID as id in the URI.
+
+This operation does not require a request body.
+
+This operation returns the details of a specific Network Rule list by its ID
+
+*Example JSON response*
+
+    {
+        "id": "5241c37f-25b5-4d92-bb3c-a66b2c112789",
+        "name": "my custom rule list",
+        "rules": [
+            "fe33b4d6-e62a-47dd-a083-addf6f3708a3",
+            "3443c5bb-891c-4c10-a065-347f5a4b021c",
+            "9426cc53-88c9-49dd-a17f-95ed1272d0f0",
+            "f2f596ef-426b-4157-800c-062078ee24c8"
+        ]
+    }
+
+
+
+#####4.9 Update a network rule list
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Verb</th><th>URI</th><th>Description</th>
+	</tr>
+	<tr>
+		<td>PUT </td><td> /nsapplainces/rulelist/{rulelist_id} </td><td>Update a specified Network rule list</td>
+	</tr>
+</table>
+
+
+Normal Response Code(s): 200
+
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+
+This operation updates the attributes of NS Appliance Rule list of a specified rulelist_id
+
+The following table describes the attributes that you can specify in the request body:
+
+An important use of PUT on this object is to change the rule priorities. User can shuffle the rules and update them as per the needs.
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Name</th><th>Description</th><th>Required</th>
+	</tr>
+	<tr>
+		<td>name</td><td>Name of the Network rule list </td><td>False</td>
+	</tr>
+	<tr>
+		<td>rules</td><td>List of network rules in the order of priority</td><td>Yes</td>
+	</tr>
+
+</table>
+
+Example JSON Request
+
+    {
+        "name": "my modified custom rule list",
+        "rules": [
+            "3443c5bb-891c-4c10-a065-347f5a4b021c",
+            "fe33b4d6-e62a-47dd-a083-addf6f3708a3",
+            "f2f596ef-426b-4157-800c-062078ee24c8"
+        ]
+    }
+
+
+
+*Example JSON Response*
+
+
+    {
+        "id": "5241c37f-25b5-4d92-bb3c-a66b2c112789",
+        "name": "my modified custom rule list",
+        "rules": [
+            "3443c5bb-891c-4c10-a065-347f5a4b021c",
+            "fe33b4d6-e62a-47dd-a083-addf6f3708a3",
+            "f2f596ef-426b-4157-800c-062078ee24c8"
+        ]
+    }
+
+
+
+#####4.10 Delete a Network Rule list 
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Verb</th><th>URI</th><th>Description</th>
+	</tr>
+	<tr>
+		<td>DELETE </td><td>/nsappliances/ruelist/{rulelist_id}</td><td>Delete a specified Rule list </td>
+	</tr>
+</table>
+
 Normal Response Code(s): 204
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
 
 This operation deletes a specified Rule list ID from the system.
 
@@ -2345,7 +1756,7 @@ This operation does not require a request body or return a response body.
 </table>
 Normal Response Code(s): 200, 203
 
-Error Response Codes(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
+Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
 
 *Example JSON response*
 
@@ -2484,7 +1895,7 @@ Error Response Codes(s): computeFault (400, 500, â€¦), serviceUnavailable (5
 
 Normal Response Code(s): 202
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
 
 This operation creates a NS Appliance Transparent Chain. Each Transparent Chain is identified by UUID.
 
@@ -2663,7 +2074,7 @@ Transparent service chain should have two network entities.
 
 Normal Response Code(s): 200, 203
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
 
 Specify the Network Service Appliance Transparent Chain ID as id in the URI.
 
@@ -2751,7 +2162,7 @@ This operation returns the details of a specific Network Service Appliance Trans
 
 Normal Response Code(s): 200
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
 
 This operation enables you to update the editable attributes of a specified NS Appliance Transparent Chain
 
@@ -2886,7 +2297,7 @@ If the nsappliances details gets changed, the instance has to terminated and re-
 
 Normal Response Code(s): 204
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
 
 This operation deletes a specified Network Service Transparent Chain from the system.
 
@@ -2915,7 +2326,7 @@ Implementation must terminate the NS Appliances created as part of this Chain, d
 
 Normal Response Code(s): 200, 203
 
-Error Response Codes(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
+Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
 
 *Example JSON response*
 
@@ -3252,7 +2663,7 @@ Implementation creates a chain of Network appliances between the networks config
 
 Normal Response Code(s): 200, 203
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
 
 Specify the Network Service Appliance Routed Chain ID as id in the URI.
 
@@ -3348,7 +2759,7 @@ This operation returns the details of a specific Network Service Appliance Route
 
 Normal Response Code(s): 200
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
 
 This operation enables you to update the editable attributes of a specified NS Appliance Routed Chain
 
@@ -3491,7 +2902,7 @@ the new networks.
 
 Normal Response Code(s): 204
 
-Error Response Code(s): computeFault (400, 500, â€¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
+Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
 
 This operation deletes a specified Network Service Routed Chain from the system.
 

@@ -1497,16 +1497,26 @@ The following table describes the attributes that you can specify in the request
     }
 
 
-#####4.5 Delete a Network Rule list 
+#####4.5 Delete a Network Rule 
 
 <table cellspacing = 30  >
 	<tr>
 		<th>Verb</th><th>URI</th><th>Description</th>
 	</tr>
 	<tr>
-		<td>DELETE </td><td>/nsappliances/ruelist/{rulelist_id}</td><td>Delete a specified Rule list </td>
+		<td>DELETE </td><td>/nsappliances/rules/{rule_id}</td><td>Delete a specified Rule</td>
 	</tr>
 </table>
+
+Normal Response Code(s): 204
+
+Error Response Code(s): computeFault (400, 500) serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
+
+This operation deletes a specified Rule from the system.
+
+Specify the ID for rule as rule_id
+
+This operation does not require a request body or return a response body.
 
 
 
@@ -1726,7 +1736,7 @@ Example JSON Request
 		<th>Verb</th><th>URI</th><th>Description</th>
 	</tr>
 	<tr>
-		<td>DELETE </td><td>/nsappliances/ruelist/{rulelist_id}</td><td>Delete a specified Rule list </td>
+		<td>DELETE </td><td>/nsappliances/rulelist/{rulelist_id}</td><td>Delete a specified Rule list </td>
 	</tr>
 </table>
 

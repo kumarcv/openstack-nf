@@ -216,6 +216,185 @@ Specify the ID for the Network Service Appliance Category as id in the URI.
 
 This operation does not require a request body or return a response body.
 
+#####1.6  List Network Functions
+
+
+<table cellspacing = 30  >
+    <tr>
+  	<th>Verb</th><th>URI</th><th>Description</th>
+	</tr>
+	<tr>
+		<td>GET </td><td> /nsappliances/networkfunction </td><td> List all network Functions</td>
+	</tr>
+</table>
+
+Normal Response Code(s): 200, 203
+
+Error Response Codes(s): computeFault (400, 500), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
+
+Example JSON response
+
+    {
+        "networkfunctions": 
+        [
+            {
+                "id": "52415800-8b69-11e0-9b19-734f6af67565",
+                "name":"UTM-service"
+               
+            },
+            {
+                "id": "493454534-8b69-11e0-9b19-74f6af672345",
+                "name":"Firewall-Service"
+            }
+        ]
+    }
+
+
+
+
+#####1.7  create a Network Function
+
+
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Verb</th><th>URI</th><th>Description</th>
+	</tr>
+	<tr>
+		<td>POST </td><td>/nsappliances/networkfunctions </td><td> Create a network Function</td>
+	</tr> 
+</table>
+
+Normal Response Code(s): 202
+
+Error Response Code(s): computeFault (400, 500), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
+
+This operation creates a network Function Catalogue. Each Network function is identified by UUID.
+
+The following table describes the required and optional attributes that you can specify in the request body.
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Name</th><th>Description</th><th>Required</th>
+	</tr>
+	<tr>
+		<td>name</td><td>The name of network function </td><td>Yes</td>
+	</tr>
+</table>
+
+*Network Function create JSON request*
+
+
+    {
+        "name": "firewall"
+    }
+
+
+*Network Function create JSON response*
+
+
+    {
+        "id": "52415800-8b69-11e0-9b19-734f565bc83b",
+        "category": "firewall"
+ 
+    }
+
+
+
+
+
+#####1.8  Get Network Functions Catalog Details
+
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Verb</th><th>URI</th><th>Description</th>
+	</tr>
+	<tr>
+		<td>GET </td><td>/nsappliances/networkfunctions/{function_id} </td><td> List details of a specified network Function </td>
+	</tr>
+</table>
+
+Normal Response Code(s): 200, 203
+
+Error Response Code(s): computeFault (400, 500), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+
+Specify the Network Function ID as id in the URI.
+
+This operation does not require a request body.
+
+This operation returns the details of a specific Network Service Appliance Category by its ID.
+
+*Example JSON response*
+
+
+    {
+        "id": "52415800-8b69-11e0-9b19-734f565bc83b",
+        "name": "firewall"
+    }
+
+
+
+
+
+
+#####1.9  Update a Network Function Name
+
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Verb</th><th>URI</th><th>Description</th>
+	</tr>
+	<tr>
+		<td>PUT </td><td>/nsappliances/networkfunctions/{function_id} </td><td> Update a specified Network Function name</td>
+	</tr>
+</table>
+
+Normal Response Code(s): 200
+
+Error Response Code(s): computeFault (400, 500), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404)
+
+This operation enables you to update the editable attributes of a specified Network Function.
+
+Specify the Network Function ID as id in the URI.
+
+The following table describes the attributes that you can specify in the request body:
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Name</th><th>Description</th>
+	</tr>
+	<tr>
+		<td>name</td><td>You can edit the description of this Network Function name </td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+#####1.10  Delete a Network Function
+
+<table cellspacing = 30  >
+	<tr>
+		<th>Verb</th><th>URI</th><th>Description</th>
+	</tr>
+	<tr>
+		<td>DELETE </td><td>/nsappliances/category/id </td><td> Delete a specified Network Function </td>
+	</tr>
+</table>
+
+Normal Response Code(s): 204
+
+Error Response Code(s): computeFault (400, 500,), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
+
+This operation deletes a specified Network Function from the system.
+
+Specify the ID for the Network function id in the URI.
+
+This operation does not require a request body or return a response body.
 
 
 
@@ -1766,7 +1945,7 @@ This operation does not require a request body or return a response body.
 </table>
 Normal Response Code(s): 200, 203
 
-Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
+Error Response Codes(s): computeFault (400, 500), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413)
 
 *Example JSON response*
 
@@ -1786,45 +1965,35 @@ Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavai
                 "nsappliances": [
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "IPS appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
+					"config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
+				}
+                        ]
+                        
+                    },
+                    {
+                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
+					"config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
+				}
                         ]
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "web-application-firewall"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
+					"config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
+				}
                         ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "firewall appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
+                        
                     }
                 ]
             },
@@ -1842,45 +2011,14 @@ Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavai
                 "nsappliances": [
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "IPS appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "c9431d2e-4032-44ca-9fe6-f293a0cd8813",
+					"config-id": "6b31bd8f-4f2d-46bf-8303-76f341ced23c"
+				}
                         ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "web-application-firewall"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "firewall appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
+                        
                     }
                 ]
             }
@@ -1905,7 +2043,7 @@ Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavai
 
 Normal Response Code(s): 202
 
-Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
+Error Response Code(s): computeFault (400, 500), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), badMediaType (415), serverCapacityUnavailable (503)
 
 This operation creates a NS Appliance Transparent Chain. Each Transparent Chain is identified by UUID.
 
@@ -1931,7 +2069,10 @@ The following table describes the required and optional attributes that you can 
 		<td>imagemap-id</td><td> NS Appliance image map id to use for the Appliance </td><td>Yes</td>
 	</tr>
 	<tr>
-		<td>size</td><td> number of instances to run per appliance cluster. If not specified, default value is 1 </td><td>No</td>
+		<td>configs</td><td> NS Appliance Configuration list for each network function of the appliance </td><td>Yes</td>
+	</tr>
+	<tr>
+		<td>max-instances</td><td> number of instances to run per appliance cluster. If not specified, default value is 1 </td><td>No</td>
 	</tr>
 	<tr>
 		<td>flavorref</td><td> Flavor to use for the NS Appliance. If not specified the default values specified in image map are taken</td><td>No</td>
@@ -1951,7 +2092,6 @@ Transparent service chain should have two network entities.
 *Create a Transparent NS Appliance Chain JSON Request*
 
             {
- 
                 "name": "first transparent chain",
                 "chain-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                 "net-info": {
@@ -1964,52 +2104,42 @@ Transparent service chain should have two network entities.
                 "nsappliances": [
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "IPS appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
+					"config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
+				}
+                        ]
+                        
+                    },
+                    {
+                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
+					"config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
+				}
                         ]
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "web-application-firewall"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
+					"config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
+				}
                         ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "firewall appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
+                        
                     }
                 ]
             }
 
 *Create a Transparent NS Appliance Chain JSON Response*
 
-             {
+            {
                 "id": "ac9da911-6f83-4a14-afef-46a5ea308ab1",
                 "name": "first transparent chain",
                 "chain-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
@@ -2023,49 +2153,38 @@ Transparent service chain should have two network entities.
                 "nsappliances": [
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "IPS appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
+					"config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
+				}
+                        ]
+                        
+                    },
+                    {
+                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
+					"config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
+				}
                         ]
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "web-application-firewall"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
+					"config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
+				}
                         ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "firewall appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
+                        
                     }
                 ]
             }
-
 
 
 
@@ -2095,7 +2214,7 @@ This operation returns the details of a specific Network Service Appliance Trans
 *Example JSON response*
 
 
-             {
+            {
                 "id": "ac9da911-6f83-4a14-afef-46a5ea308ab1",
                 "name": "first transparent chain",
                 "chain-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
@@ -2109,49 +2228,38 @@ This operation returns the details of a specific Network Service Appliance Trans
                 "nsappliances": [
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "IPS appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
+					"config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
+				}
+                        ]
+                        
+                    },
+                    {
+                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
+					"config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
+				}
                         ]
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "web-application-firewall"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
+					"config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
+				}
                         ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "firewall appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
+                        
                     }
                 ]
             }
-
     
 
 
@@ -2198,7 +2306,10 @@ The following table describes the attributes that you can specify in the request
 		<td>imagemap-id</td><td> NS Appliance image map id to use for the Appliance </td><td>False</td>
 	</tr>
 	<tr>
-		<td>size</td><td> number of instances to run per appliance cluster. If not specified, default value is 1 </td><td>No</td>
+		<td>configs</td><td> NS Appliance Configuration list for each network function of the appliance </td><td>Yes</td>
+	</tr>
+	<tr>
+		<td>max-instances</td><td> number of instances to run per appliance cluster. If not specified, default value is 1 </td><td>No</td>
 	</tr>
 	<tr>
 		<td>flavorref</td> Flavor to use for the NS Appliance. If not specified the default values specified in image map are taken <td></td><td>No</td>
@@ -2233,9 +2344,9 @@ If the nsappliances details gets changed, the instance has to terminated and re-
     
 *Update NS Transparent Chain JSON Response*
 
-             {
+            {
                 "id": "ac9da911-6f83-4a14-afef-46a5ea308ab1",
-                "name": "my first transparent chain",
+                "name": "first transparent chain",
                 "chain-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                 "net-info": {
                     "networks": [
@@ -2247,45 +2358,35 @@ If the nsappliances details gets changed, the instance has to terminated and re-
                 "nsappliances": [
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "IPS appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
+					"config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
+				}
+                        ]
+                        
+                    },
+                    {
+                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
+					"config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
+				}
                         ]
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "web-application-firewall"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
+					"config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
+				}
                         ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "firewall appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
+                        
                     }
                 ]
             }
@@ -2363,46 +2464,27 @@ Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavai
                 "nsappliances": [
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "IPS appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "940e2cdf-5173-475c-90b1-795590235119",
+					"config-id": "84182baf-a342-4951-821c-aba23d6d73d9"
+				}
                         ]
+                        
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "web-application-firewall"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "1eaa45eb-43e3-467a-a10b-14a8bcdea1b7",
+					"config-id": "024d863b-6deb-4f76-8351-c61c0b1cd99d"
+				}
                         ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "firewall appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
+                        
                     }
+
                 ]
             },
             {
@@ -2426,45 +2508,14 @@ Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavai
                 "nsappliances": [
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "IPS appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
+					"config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
+				}
                         ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "web-application-firewall"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "firewall appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
+                        
                     }
                 ]
             }
@@ -2508,7 +2559,10 @@ The following table describes the required and optional attributes that you can 
 		<td>imagemap-id</td><td> Image to be used for the appliance</td><td>Yes</td>
 	</tr>
     <tr>
-		<td>size</td><td> number of appliances in the cluster </td><td>Yes</td>
+	<tr>
+		<td>configs</td><td> NS Appliance Configuration list for each network function of the appliance </td><td>Yes</td>
+	</tr>
+		<td>max-instances</td><td> number of appliances in the cluster </td><td>Yes</td>
 	</tr>
 	<tr>
 		<td>flavorref</td><td>Flavor to use for the appliance. Overwrites the default flavor set in the image map </td><td>Yes</td>
@@ -2528,79 +2582,14 @@ Implementation creates a chain of Network appliances between the networks config
 
 
             {
-                "name": "a routed chain",
-                "net-info": {
-                    "networks": [
-                        {
-                            "network-id": "3f8692d1-61aa-42ca-8967-fde1a5d0f084",
-                            "subnet-id": "c4e52762-f445-4591-9d9e-97e10003847a"
-                        },
-                        {
-                            "network-id": "cb302dcb-3375-410d-8ca2-8b7e07d2b6dd",
-                            "subnet-id": "0161d804-1054-4dd1-8711-b85775ac5812"
-                        }
-                    ],
-                    "internal-subnetid": "cb302dcb-3375-410d-8ca2-8b7e07d2b6dd"
-                },
-                "rulelist-id" : "5241c37f-25b5-4d92-bb3c-a66b2c112789",
-                "nsappliances": [
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "IPS appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "web-application-firewall"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "firewall appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
-                    }
-                ]
-            }
 
-
-*Example JSON Response*
-
-            {
-                "id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                "name": "a routed chain",
+                "name": "a second routed chain",
  
                 "net-info": {
                     "networks": [
                         {
-                            "network-id": "3f8692d1-61aa-42ca-8967-fde1a5d0f084",
-                            "subnet-id": "c4e52762-f445-4591-9d9e-97e10003847a"
+                            "network-id": "f83eefb3-0c76-4083-978b-268db09f7a61",
+                            "subnet-id": "f37510be-0ad0-4589-a3cb-1a8894d0938d"
                         },
                         {
                             "network-id": "cb302dcb-3375-410d-8ca2-8b7e07d2b6dd",
@@ -2613,49 +2602,52 @@ Implementation creates a chain of Network appliances between the networks config
                 "nsappliances": [
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "IPS appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
+					"config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
+				}
                         ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "web-application-firewall"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "firewall appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
+                        
                     }
                 ]
             }
 
+*Example JSON Response*
+
+            {
+                "id": "e84eb701-ccbf-42f3-82ff-80d83e38e1bb",
+                "name": "a second routed chain",
+ 
+                "net-info": {
+                    "networks": [
+                        {
+                            "network-id": "f83eefb3-0c76-4083-978b-268db09f7a61",
+                            "subnet-id": "f37510be-0ad0-4589-a3cb-1a8894d0938d"
+                        },
+                        {
+                            "network-id": "cb302dcb-3375-410d-8ca2-8b7e07d2b6dd",
+                            "subnet-id": "0161d804-1054-4dd1-8711-b85775ac5812"
+                        }
+                    ],
+                    "internal-subnetid": "cb302dcb-3375-410d-8ca2-8b7e07d2b6dd"
+                },
+                "rulelist-id" : "5241c37f-25b5-4d92-bb3c-a66b2c112789",
+                "nsappliances": [
+                    {
+                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
+					"config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
+				}
+                        ]
+                        
+                    }
+                ]
+            }
 
 
 
@@ -2684,15 +2676,15 @@ This operation returns the details of a specific Network Service Appliance Route
 *Example JSON response*
 
 
-           {
-                "id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                "name": "a routed chain",
+            {
+                "id": "e84eb701-ccbf-42f3-82ff-80d83e38e1bb",
+                "name": "a second routed chain",
  
                 "net-info": {
                     "networks": [
                         {
-                            "network-id": "3f8692d1-61aa-42ca-8967-fde1a5d0f084",
-                            "subnet-id": "c4e52762-f445-4591-9d9e-97e10003847a"
+                            "network-id": "f83eefb3-0c76-4083-978b-268db09f7a61",
+                            "subnet-id": "f37510be-0ad0-4589-a3cb-1a8894d0938d"
                         },
                         {
                             "network-id": "cb302dcb-3375-410d-8ca2-8b7e07d2b6dd",
@@ -2705,48 +2697,18 @@ This operation returns the details of a specific Network Service Appliance Route
                 "nsappliances": [
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "IPS appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
+					"config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
+				}
                         ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "web-application-firewall"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "firewall appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
+                        
                     }
                 ]
             }
+
 
 
 
@@ -2800,7 +2762,10 @@ The following table describes the attributes that you can specify in the request
 		<td>imagemap-id</td><td> NS Appliance image map id to use for the Appliance </td><td>False</td>
 	</tr>
 	<tr>
-		<td>size</td><td> number of instances to run per appliance cluster. If not specified, default value is 1 </td><td>No</td>
+		<td>configs</td><td> NS Appliance Configuration list for each network function of the appliance </td><td>Yes</td>
+	</tr>
+	<tr>
+		<td>max-instaces</td><td> number of instances to run per appliance cluster. If not specified, default value is 1 </td><td>No</td>
 	</tr>
 	<tr>
 		<td>flavorref</td> Flavor to use for the NS Appliance. If not specified the default values specified in image map are taken <td></td><td>No</td>
@@ -2819,7 +2784,7 @@ the new networks.
 *Update NS Routed Chain JSON Request*
 
            {
-                "id": "36b63baa-8010-4873-b040-1d886e39fd8b",
+                "id": "e84eb701-ccbf-42f3-82ff-80d83e38e1bb",
                 "name": "a custom routed chain",
 
                 "rulelist-id" : "9241c37f-25b5-4d92-bb3c-a66b2c112789",
@@ -2829,15 +2794,15 @@ the new networks.
     
 *Update NS Routed Chain JSON Response*
 
-           {
-                "id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                "name": "a custom routed chain",
+             {
+                "id": "e84eb701-ccbf-42f3-82ff-80d83e38e1bb",
+                "name": "a second routed chain",
  
                 "net-info": {
                     "networks": [
                         {
-                            "network-id": "3f8692d1-61aa-42ca-8967-fde1a5d0f084",
-                            "subnet-id": "c4e52762-f445-4591-9d9e-97e10003847a"
+                            "network-id": "f83eefb3-0c76-4083-978b-268db09f7a61",
+                            "subnet-id": "f37510be-0ad0-4589-a3cb-1a8894d0938d"
                         },
                         {
                             "network-id": "cb302dcb-3375-410d-8ca2-8b7e07d2b6dd",
@@ -2850,49 +2815,17 @@ the new networks.
                 "nsappliances": [
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "IPS appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
+                        "max-instances":1,
+			"configs": [
+				{
+					"networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
+					"config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
+				}
                         ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "web-application-firewall"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
-                    },
-                    {
-                        "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-                        "size": 8,
-                        "flavorRef": "52415800-8b69-11e0-9b19-734f1195ff37",
-                        "metadata": {
-                            "My Server Name": "firewall appliance"
-                        },
-                        "personality": [
-                            {
-                                "path": "/etc/banner.txt",
-                                "contents": "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
-                            }
-                        ]
+                        
                     }
                 ]
             }
-
 
 
 
@@ -2912,7 +2845,7 @@ the new networks.
 
 Normal Response Code(s): 204
 
-Error Response Code(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
+Error Response Code(s): computeFault (400, 500), serviceUnavailable (503), unauthorized (401), forbidden (403), badRequest (400), badMethod (405), overLimit (413), itemNotFound (404), itemInUse (409)
 
 This operation deletes a specified Network Service Routed Chain from the system.
 

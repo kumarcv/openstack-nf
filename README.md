@@ -9,7 +9,7 @@ openstack Network Function Virtualization
 
 ### - Ravi Chunduru 
 
-Contributiors
+Contributors
 =============
 ### Balaji - Freescale
 ### Srini Addepalli - Freescale

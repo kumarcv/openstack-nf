@@ -3,11 +3,16 @@ openstack-nf
 
 openstack Network Function Virtualization
 
-**Network Service APIs**
+**Network Service APIs - Version 1.2**
 =======================
 
 
-### - Ravi Chunduru
+### - Ravi Chunduru 
+
+Contributiors
+=============
+### Balaji - Freescale
+### Srini Addepalli - Freescale
 
 
 ##1.0  Network Service Appliance Category API

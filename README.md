@@ -22,11 +22,11 @@ Network Service appliance category API can be used to manage different categorie
 
 <table cellspacing = 30  >
     <tr>
-  	<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td> /nsappliances/category </td><td> List all network service Appliance Categories</td>
-	</tr>
+    <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td> /nsappliances/category </td><td> List all network service Appliance Categories</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200, 203
@@ -48,7 +48,7 @@ Example JSON response
                 "id": "493454534-8b69-11e0-9b19-74f6af672345",
                 "category": "IPS",
                 "description": "Intrusion Prevention Appliance",
-                "shared":False	
+                "shared":False  
             }
         ]
     }
@@ -61,12 +61,12 @@ Example JSON response
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>POST </td><td>/nsappliances/category </td><td> Create a network service Appliance</td>
-	</tr> 
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>POST </td><td>/nsappliances/category </td><td> Create a network service Appliance</td>
+    </tr> 
 </table>
 
 Normal Response Code(s): 202
@@ -78,18 +78,18 @@ This operation creates a network service category. Each category is identified b
 The following table describes the required and optional attributes that you can specify in the request body.
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th><th>Required</th>
-	</tr>
-	<tr>
-		<td>category</td><td>Type of network service Appliance grouped as category. Following are few categories firewall, IPS, WAF etc., User can create category of his choice </td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>description</td><td>Describe about the category</td><td>False</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th><th>Required</th>
+    </tr>
+    <tr>
+        <td>category</td><td>Type of network service Appliance grouped as category. Following are few categories firewall, IPS, WAF etc., User can create category of his choice </td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>description</td><td>Describe about the category</td><td>False</td>
+    </tr>
         <tr>
-		<td>shared</td><td>Set the accessibility of the nsappliance category for other tenants</td>
-	</tr>
+        <td>shared</td><td>Set the accessibility of the nsappliance category for other tenants</td>
+    </tr>
 </table>
 
 *Network service Appliance Category create JSON request*
@@ -121,12 +121,12 @@ The following table describes the required and optional attributes that you can 
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td>/nsappliances/category/{category_id} </td><td> List details of a specified network service</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td>/nsappliances/category/{category_id} </td><td> List details of a specified network service</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200, 203
@@ -159,12 +159,12 @@ This operation returns the details of a specific Network Service Appliance Categ
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>PUT </td><td>/nsappliances/category/{category_id} </td><td> Update a specified Network Service Category</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>PUT </td><td>/nsappliances/category/{category_id} </td><td> Update a specified Network Service Category</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200
@@ -178,15 +178,15 @@ Specify the Network Service Appliance Category ID as id in the URI.
 The following table describes the attributes that you can specify in the request body:
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>description</td><td>You can edit the description of this Network Service Appliance Category </td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>description</td><td>You can edit the description of this Network Service Appliance Category </td>
+    </tr>
         <tr>
-		<td>shared</td><td>Set the accessibility of the nsappliance category for other tenants</td>
-	</tr>
+        <td>shared</td><td>Set the accessibility of the nsappliance category for other tenants</td>
+    </tr>
 </table>
 
 
@@ -198,12 +198,12 @@ The following table describes the attributes that you can specify in the request
 #####1.5  Delete a Network Service Appliance Category
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>DELETE </td><td>/nsappliances/category/id </td><td> Delete a specified Network Service Appliance Category </td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>DELETE </td><td>/nsappliances/category/id </td><td> Delete a specified Network Service Appliance Category </td>
+    </tr>
 </table>
 
 Normal Response Code(s): 204
@@ -221,11 +221,11 @@ This operation does not require a request body or return a response body.
 
 <table cellspacing = 30  >
     <tr>
-  	<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td> /nsappliances/networkfunction </td><td> List all network Functions</td>
-	</tr>
+    <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td> /nsappliances/networkfunction </td><td> List all network Functions</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200, 203
@@ -257,12 +257,12 @@ Example JSON response
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>POST </td><td>/nsappliances/networkfunctions </td><td> Create a network Function</td>
-	</tr> 
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>POST </td><td>/nsappliances/networkfunctions </td><td> Create a network Function</td>
+    </tr> 
 </table>
 
 Normal Response Code(s): 202
@@ -274,12 +274,12 @@ This operation creates a network Function Catalogue. Each Network function is id
 The following table describes the required and optional attributes that you can specify in the request body.
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th><th>Required</th>
-	</tr>
-	<tr>
-		<td>name</td><td>The name of network function </td><td>Yes</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th><th>Required</th>
+    </tr>
+    <tr>
+        <td>name</td><td>The name of network function </td><td>Yes</td>
+    </tr>
 </table>
 
 *Network Function create JSON request*
@@ -307,12 +307,12 @@ The following table describes the required and optional attributes that you can 
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td>/nsappliances/networkfunctions/{function_id} </td><td> List details of a specified network Function </td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td>/nsappliances/networkfunctions/{function_id} </td><td> List details of a specified network Function </td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200, 203
@@ -342,12 +342,12 @@ This operation returns the details of a specific Network Service Appliance Categ
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>PUT </td><td>/nsappliances/networkfunctions/{function_id} </td><td> Update a specified Network Function name</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>PUT </td><td>/nsappliances/networkfunctions/{function_id} </td><td> Update a specified Network Function name</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200
@@ -361,12 +361,12 @@ Specify the Network Function ID as id in the URI.
 The following table describes the attributes that you can specify in the request body:
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>name</td><td>You can edit the description of this Network Function name </td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>name</td><td>You can edit the description of this Network Function name </td>
+    </tr>
 </table>
 
 
@@ -378,12 +378,12 @@ The following table describes the attributes that you can specify in the request
 #####1.10  Delete a Network Function
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>DELETE </td><td>/nsappliances/category/id </td><td> Delete a specified Network Function </td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>DELETE </td><td>/nsappliances/category/id </td><td> Delete a specified Network Function </td>
+    </tr>
 </table>
 
 Normal Response Code(s): 204
@@ -407,12 +407,12 @@ The following set of APIs are to manage Images for the configured Network Servic
 #####2.1  List Image mappings for a Network Service Appliance
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td>/nsappliances/category/{category_id}/imagemap</td><td>List all Network Service Appliance images for a specified Category</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td>/nsappliances/category/{category_id}/imagemap</td><td>List all Network Service Appliance images for a specified Category</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200, 203
@@ -457,7 +457,7 @@ Example JSON response
         }
     ]
     }
-	
+    
 
 
 
@@ -466,12 +466,12 @@ Example JSON response
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>POST </td><td>/nsappliances/category/{category_id}/imagemap </td><td>Create a Image map of a specified Network Service Appliance Category </td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>POST </td><td>/nsappliances/category/{category_id}/imagemap </td><td>Create a Image map of a specified Network Service Appliance Category </td>
+    </tr>
 </table>
 
 Normal Response Code(s): 202
@@ -485,24 +485,24 @@ This API does not upload any new images but refers to existing Image in Glance. 
 The following table describes the required and optional attributes that you can specify in the request body.
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th><th>Required</th>
-	</tr>
-	<tr>
-		<td>name</td><td>Name of the Image map</td><td>True</td>
-	</tr>
-	<tr>
-		<td>imageRef</td><td>The image reference for the desired image for your NS Appliance.Specify as an ID or full URL.</td><td>True</td>
-	</tr>
-	<tr>
-		<td>flavorRef</td><td>The flavor reference for the desired flavor for your NS Appliance.Specify as an ID or full URL. </td><td>True</td>
-		
-	</tr>
-		<td>metadata</td><td>Metadata key and value pairs. For information, see openstack docsÃ¢â‚¬Â.</td><td>False</td>
-	</tr>
-	<tr>
-		<td>personality</td><td>File path and contents. For information, see openstack docs</td><td>False</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th><th>Required</th>
+    </tr>
+    <tr>
+        <td>name</td><td>Name of the Image map</td><td>True</td>
+    </tr>
+    <tr>
+        <td>imageRef</td><td>The image reference for the desired image for your NS Appliance.Specify as an ID or full URL.</td><td>True</td>
+    </tr>
+    <tr>
+        <td>flavorRef</td><td>The flavor reference for the desired flavor for your NS Appliance.Specify as an ID or full URL. </td><td>True</td>
+        
+    </tr>
+        <td>metadata</td><td>Metadata key and value pairs. For information, see openstack docsÃ¢â‚¬Â.</td><td>False</td>
+    </tr>
+    <tr>
+        <td>personality</td><td>File path and contents. For information, see openstack docs</td><td>False</td>
+    </tr>
 </table>
 
 
@@ -516,59 +516,59 @@ The following table describes the required and optional attributes that you can 
         "flavorRef" : "52415800-8b69-11e0-9b19-734f1195ff37",
         "metadata" : {
            "My Server Name" : "web-application-firewall"
-     	},
-     	"personality" : [
-            { 		   
+        },
+        "personality" : [
+            {          
                 "path" : "/etc/banner.txt",
-     	        "contents" : "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
+                "contents" : "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
             } 
         ]
     }
-     		       
+                   
 
 
 *NS Appliance create image map JSON response*
 
 
 
-	{
-    	"imagemap": {
-        	"id": "52415800-8b69-11e0-9b19-734f565bc83b",
-        	"tenant_id": "1234",
-        	"name": "waf-appliance",
-        	"image": {
-            	"id": "52415800-8b69-11e0-9b19-734f6f006e54",
-            	"name": "WAF 1.2",
-            	"links": [
-                	{
-                    	"rel": "self",
-                    	"href": "http://servers.api.openstack.org/v2/1234/images/52415800-8b69-11e0-9b19-734f6f006e54"
-                	},
-                	{
-                    	"rel": "bookmark",
-                    	"href": "http://servers.api.openstack.org/1234/images/52415800-8b69-11e0-9b19-734f6f006e54"
-                	}
-            	]
-        	},
-        	"flavor": {
-            	"id": "52415800-8b69-11e0-9b19-734f1195ff37",
-            	"name": "256 MB Server",
-            	"links": [
-                	{
-                    	"rel": "self",
-                    	"href": "http://servers.api.openstack.org/v2/1234/flavors/52415800-8b69-11e0-9b19-734f1195ff37"
-                	},
-                	{
-                    	"rel": "bookmark",
-                    	"href": "http://servers.api.openstack.org/1234/flavors/52415800-8b69-11e0-9b19-734f1195ff37"
-                	}
-            	]
-        	},
-        	"metadata": {
-            	"My Server Name": "web-application-firewall"
-        	}
-    	}
-	}
+    {
+        "imagemap": {
+            "id": "52415800-8b69-11e0-9b19-734f565bc83b",
+            "tenant_id": "1234",
+            "name": "waf-appliance",
+            "image": {
+                "id": "52415800-8b69-11e0-9b19-734f6f006e54",
+                "name": "WAF 1.2",
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "http://servers.api.openstack.org/v2/1234/images/52415800-8b69-11e0-9b19-734f6f006e54"
+                    },
+                    {
+                        "rel": "bookmark",
+                        "href": "http://servers.api.openstack.org/1234/images/52415800-8b69-11e0-9b19-734f6f006e54"
+                    }
+                ]
+            },
+            "flavor": {
+                "id": "52415800-8b69-11e0-9b19-734f1195ff37",
+                "name": "256 MB Server",
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "http://servers.api.openstack.org/v2/1234/flavors/52415800-8b69-11e0-9b19-734f1195ff37"
+                    },
+                    {
+                        "rel": "bookmark",
+                        "href": "http://servers.api.openstack.org/1234/flavors/52415800-8b69-11e0-9b19-734f1195ff37"
+                    }
+                ]
+            },
+            "metadata": {
+                "My Server Name": "web-application-firewall"
+            }
+        }
+    }
 
 
 
@@ -579,12 +579,12 @@ The following table describes the required and optional attributes that you can 
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td>/nsappliances/category/{category_id}/imagemap/{imagemap_id} </td><td> List details of a specified image of a specified NS Appliance category</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td>/nsappliances/category/{category_id}/imagemap/{imagemap_id} </td><td> List details of a specified image of a specified NS Appliance category</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200, 203
@@ -600,44 +600,44 @@ This operation returns the details of a specific NS Appliance Image map by its I
 *Example JSON response*
 
 
-	{
-    	"imagemap": {
-        	"id": "52415800-8b69-11e0-9b19-734f565bc83b",
-        	"tenant_id": "1234",
-        	"name": "waf-appliance",
-        	"image": {
-            	"id": "52415800-8b69-11e0-9b19-734f6f006e54",
-            	"name": "WAF 1.2",
-            	"links": [
-                	{
-                    	"rel": "self",
-                    	"href": "http://servers.api.openstack.org/v2/1234/images/52415800-8b69-11e0-9b19-734f6f006e54"
-                	},
-                	{
-                    	"rel": "bookmark",
-                    	"href": "http://servers.api.openstack.org/1234/images/52415800-8b69-11e0-9b19-734f6f006e54"
-                	}
-            	]
-        	},
-        	"flavor": {
-            	"id": "52415800-8b69-11e0-9b19-734f1195ff37",
-            	"name": "256 MB Server",
-            	"links": [
-                	{
-                    	"rel": "self",
-                    	"href": "http://servers.api.openstack.org/v2/1234/flavors/52415800-8b69-11e0-9b19-734f1195ff37"
-                	},
-                	{
-                    	"rel": "bookmark",
-                    	"href": "http://servers.api.openstack.org/1234/flavors/52415800-8b69-11e0-9b19-734f1195ff37"
-                	}
-            	]
-        	},
-        	"metadata": {
-            	"My Server Name": "web-application-firewall"
-        	}
-    	}
-	}
+    {
+        "imagemap": {
+            "id": "52415800-8b69-11e0-9b19-734f565bc83b",
+            "tenant_id": "1234",
+            "name": "waf-appliance",
+            "image": {
+                "id": "52415800-8b69-11e0-9b19-734f6f006e54",
+                "name": "WAF 1.2",
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "http://servers.api.openstack.org/v2/1234/images/52415800-8b69-11e0-9b19-734f6f006e54"
+                    },
+                    {
+                        "rel": "bookmark",
+                        "href": "http://servers.api.openstack.org/1234/images/52415800-8b69-11e0-9b19-734f6f006e54"
+                    }
+                ]
+            },
+            "flavor": {
+                "id": "52415800-8b69-11e0-9b19-734f1195ff37",
+                "name": "256 MB Server",
+                "links": [
+                    {
+                        "rel": "self",
+                        "href": "http://servers.api.openstack.org/v2/1234/flavors/52415800-8b69-11e0-9b19-734f1195ff37"
+                    },
+                    {
+                        "rel": "bookmark",
+                        "href": "http://servers.api.openstack.org/1234/flavors/52415800-8b69-11e0-9b19-734f1195ff37"
+                    }
+                ]
+            },
+            "metadata": {
+                "My Server Name": "web-application-firewall"
+            }
+        }
+    }
 
 
 
@@ -646,12 +646,12 @@ This operation returns the details of a specific NS Appliance Image map by its I
 #####2.4  Update Image map for a given NS Appliance Category
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>PUT </td><td> /nsappliances/category/{category_id}/imagemap/{imagemap_id}</td><td> Update a specified Image map of a specified NS Appliance Category</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>PUT </td><td> /nsappliances/category/{category_id}/imagemap/{imagemap_id}</td><td> Update a specified Image map of a specified NS Appliance Category</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200
@@ -667,12 +667,12 @@ This request requires a body. Chaning parameters other than the specified attrib
 The following table describes the attributes that you can specify in the request body:
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>name</td><td>Change the Image mapping name</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>name</td><td>Change the Image mapping name</td>
+    </tr>
 </table>
 
 
@@ -683,12 +683,12 @@ The following table describes the attributes that you can specify in the request
 #####2.5  Delete a image map in NS Appliance Category
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>DELETE </td><td>/nsappliances/category/{category_id}/imagemap/{imagemap_id}</td><td>Delete a specified image map of a NS Appliance Category </td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>DELETE </td><td>/nsappliances/category/{category_id}/imagemap/{imagemap_id}</td><td>Delete a specified image map of a NS Appliance Category </td>
+    </tr>
 </table>
 
 Normal Response Code(s): 204
@@ -711,12 +711,12 @@ This operation does not require a request body or return a response body.
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td> /nsapplainces/chain </td><td>List all NS Appliance Chains</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td> /nsapplainces/chain </td><td>List all NS Appliance Chains</td>
+    </tr>
 </table>
 Normal Response Code(s): 200, 203
 
@@ -725,29 +725,29 @@ Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavai
 Example JSON response
 
 
-	{
-    	"chain": [
-        	{
-            	"id": "36b63baa-8010-4873-b040-1d886e39fd8b",
-            	"tenant-id": "4b38f464-5890-4bed-8c75-24e88e366d4c",
-            	"name": "security services chain",
-            	"nsappliances-imagemaps": [
-                	"edb70004-5499-4a78-a8cd-a708ff44e087",
-                	"3fa754ad-07cd-45e6-8ff2-e353a8d5051e",
-                	"daa512af-eb6a-4e72-8db6-451978188d33"
-            	]
-        	},
-        	{
-            	"id": "11b63baa-8010-4873-b040-1d886e39fd8b",
-            	"tenant-id": "4b38f464-5890-4bed-8c75-24e88e366d4c",
-            	"name": "value added network servers chain",
-            	"nsappliances-imagemaps": [
-                	"aab70004-5499-4a78-a8cd-a708ff44e087",
-                	"bb754ad-07cd-45e6-8ff2-e353a8d5051e"
-            	]
-        	}
-    	]
-	}
+    {
+        "chain": [
+            {
+                "id": "36b63baa-8010-4873-b040-1d886e39fd8b",
+                "tenant-id": "4b38f464-5890-4bed-8c75-24e88e366d4c",
+                "name": "security services chain",
+                "nsappliances-imagemaps": [
+                    "edb70004-5499-4a78-a8cd-a708ff44e087",
+                    "3fa754ad-07cd-45e6-8ff2-e353a8d5051e",
+                    "daa512af-eb6a-4e72-8db6-451978188d33"
+                ]
+            },
+            {
+                "id": "11b63baa-8010-4873-b040-1d886e39fd8b",
+                "tenant-id": "4b38f464-5890-4bed-8c75-24e88e366d4c",
+                "name": "value added network servers chain",
+                "nsappliances-imagemaps": [
+                    "aab70004-5499-4a78-a8cd-a708ff44e087",
+                    "bb754ad-07cd-45e6-8ff2-e353a8d5051e"
+                ]
+            }
+        ]
+    }
 
 
 
@@ -759,12 +759,12 @@ Example JSON response
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>POST </td><td> /nsappliances/chain </td><td> Create a NS Appliances Chain</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>POST </td><td> /nsappliances/chain </td><td> Create a NS Appliances Chain</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 202
@@ -780,15 +780,15 @@ The chain will be created with the list of NS Appliances provided in the same or
 The following table describes the required and optional attributes that you can specify in the request body.
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th><th>Required</th>
-	</tr>
-	<tr>
-		<td>name</td><td>Name of the NS Appliance Chain </td><td>False</td>
-	</tr>
-	<tr>
-		<td>id</td><td>List of NS Appliance Image maps. The order is important </td><td>Yes</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th><th>Required</th>
+    </tr>
+    <tr>
+        <td>name</td><td>Name of the NS Appliance Chain </td><td>False</td>
+    </tr>
+    <tr>
+        <td>id</td><td>List of NS Appliance Image maps. The order is important </td><td>Yes</td>
+    </tr>
 </table>
 
 *NS Appliance chain create JSON request*
@@ -826,12 +826,12 @@ The following table describes the required and optional attributes that you can 
 #####3.3  Get details of a NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td>/nsappliances/chain/{chain_id} </td><td> List details of a specified NS Appliance Chain</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td>/nsappliances/chain/{chain_id} </td><td> List details of a specified NS Appliance Chain</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200, 203
@@ -866,12 +866,12 @@ This operation returns the details of a specific Network Service Appliance Chain
 #####3.4  update a NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>PUT </td><td> /nsappliances/chain/{chain_id}</td><td> Update a specified NS Appliance Chain/td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>PUT </td><td> /nsappliances/chain/{chain_id}</td><td> Update a specified NS Appliance Chain/td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200
@@ -883,15 +883,15 @@ This operation updates the attributes of NS Appliance Chain of a specified chain
 The following table describes the attributes that you can specify in the request body:
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>name</td><td>Change the Chain name</td>
-	</tr>
-		<tr>
-		<td>nsappliances-imagemap-ids</td><td>Change the image maps for the chain</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>name</td><td>Change the Chain name</td>
+    </tr>
+        <tr>
+        <td>nsappliances-imagemap-ids</td><td>Change the image maps for the chain</td>
+    </tr>
 </table>
 
 
@@ -904,12 +904,12 @@ The following table describes the attributes that you can specify in the request
 #####3.5  Delete a NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>DELETE </td><td>/nsappliances/chain/{chain_id}</td><td>Delete a specified Chain of NS Appliances </td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>DELETE </td><td>/nsappliances/chain/{chain_id}</td><td>Delete a specified Chain of NS Appliances </td>
+    </tr>
 </table>
 
 Normal Response Code(s): 204
@@ -934,12 +934,12 @@ This operation does not require a request body or return a response body.
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td>/nsappliances/rules</td><td>List all network rules </td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td>/nsappliances/rules</td><td>List all network rules </td>
+    </tr>
 </table>
 
 
@@ -1121,12 +1121,12 @@ Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavai
 #####4.2 Create a Network rule
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>POST </td><td>/nsappliances/rules </td><td>Create a network rule</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>POST </td><td>/nsappliances/rules </td><td>Create a network rule</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 202
@@ -1140,54 +1140,54 @@ Note that rules are prioritized as per the order in the JSON request.
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th><th>Required</th>
-	</tr>
-	<tr>
-		<td>name</td><td>Name of the Network rule list </td><td>False</td>
-	</tr>
-	<tr>
-		<td>prev</td><td>UUID of previous rule. This along with next field helps to insert a rule between those rules. If prev is None then this is the first rule</td><td>False</td>
-	</tr>
-	<tr>
-		<td>next</td><td>UUID of the next rule. Next will be None for the last rule</td><td>False</td>
-	</tr>
-	<tr>
-		<td>name</td><td>Name of the Network rule list </td><td>False</td>
-	</tr>
-	<tr>
-		<td>src-mac</td><td>Source MAC address. Specify a list of MACs </td><td>False</td>
-	</tr>
-	<tr>
-		<td>dst-mac</td><td>Destination MAC address. Specify List of MACs</td><td>False</td>
-	</tr>
-	<tr>
-		<td>vlan</td><td>VLAN of the packet. Specify a custom range and/or list of VLANs </td><td>False</td>
-	</tr>
-	<tr>
-		<td>version</td><td>IP version. Can set to to 4 for IPv4 and 6 for IPv6 </td><td>False</td>
-	</tr>
-	<tr>
-		<td>src-addr</td><td>Source IP Address. Can be range with start and end specified or list of IP addresses or a subnet with mask or combination of them </td><td>False</td>
-	</tr>
-	<tr>
-		<td>dst-addr</td><td>Destination IP Address. Can be range with start and end specified or list of IP addresses or a subnet with mask or combination of them </td><td>False</td>
-	</tr>
-	<tr>
-		<td>protocol</td><td>IP Protocol. </td><td>False</td>
-	</tr>
-	<tr>
-		<td>src-port</td><td>TCP or UDP port. It can be range or list of ports</td><td>False</td>
-	</tr>
-	<tr>
-		<td>dst-port</td><td>TCP or UDP port. It can be range or list of ports</td><td>False</td>
-	</tr>
-	<tr>
-		<td>bypass</td><td>Action Bypass for the specified NS Appliance imagemap IDs</td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>imagemap-ids</td><td>List of NS Appliance Imagemap IDs</td><td>Yes</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th><th>Required</th>
+    </tr>
+    <tr>
+        <td>name</td><td>Name of the Network rule list </td><td>False</td>
+    </tr>
+    <tr>
+        <td>prev</td><td>UUID of previous rule. This along with next field helps to insert a rule between those rules. If prev is None then this is the first rule</td><td>False</td>
+    </tr>
+    <tr>
+        <td>next</td><td>UUID of the next rule. Next will be None for the last rule</td><td>False</td>
+    </tr>
+    <tr>
+        <td>name</td><td>Name of the Network rule list </td><td>False</td>
+    </tr>
+    <tr>
+        <td>src-mac</td><td>Source MAC address. Specify a list of MACs </td><td>False</td>
+    </tr>
+    <tr>
+        <td>dst-mac</td><td>Destination MAC address. Specify List of MACs</td><td>False</td>
+    </tr>
+    <tr>
+        <td>vlan</td><td>VLAN of the packet. Specify a custom range and/or list of VLANs </td><td>False</td>
+    </tr>
+    <tr>
+        <td>version</td><td>IP version. Can set to to 4 for IPv4 and 6 for IPv6 </td><td>False</td>
+    </tr>
+    <tr>
+        <td>src-addr</td><td>Source IP Address. Can be range with start and end specified or list of IP addresses or a subnet with mask or combination of them </td><td>False</td>
+    </tr>
+    <tr>
+        <td>dst-addr</td><td>Destination IP Address. Can be range with start and end specified or list of IP addresses or a subnet with mask or combination of them </td><td>False</td>
+    </tr>
+    <tr>
+        <td>protocol</td><td>IP Protocol. </td><td>False</td>
+    </tr>
+    <tr>
+        <td>src-port</td><td>TCP or UDP port. It can be range or list of ports</td><td>False</td>
+    </tr>
+    <tr>
+        <td>dst-port</td><td>TCP or UDP port. It can be range or list of ports</td><td>False</td>
+    </tr>
+    <tr>
+        <td>bypass</td><td>Action Bypass for the specified NS Appliance imagemap IDs</td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>imagemap-ids</td><td>List of NS Appliance Imagemap IDs</td><td>Yes</td>
+    </tr>
 
 </table>
 
@@ -1381,12 +1381,12 @@ Note that rules are prioritized as per the order in the JSON request.
 #####4.3  Get details of a Network Rule
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td>/nsappliances/rules/{rule_id} </td><td> List details of a specified Network rule</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td>/nsappliances/rules/{rule_id} </td><td> List details of a specified Network rule</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200, 203
@@ -1499,12 +1499,12 @@ This operation returns the details of a specific Network Rule by its ID
 #####4.4 Update a network rule
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>PUT </td><td> /nsapplainces/rules/{rule_id} </td><td>Update a specified Network rule</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>PUT </td><td> /nsapplainces/rules/{rule_id} </td><td>Update a specified Network rule</td>
+    </tr>
 </table>
 
 
@@ -1519,51 +1519,51 @@ The following table describes the attributes that you can specify in the request
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th><th>Required</th>
-	</tr>
-	<tr>
-		<td>name</td><td>Name of the Network rule list </td><td>False</td>
-	</tr>
-	<tr>
-		<td>prev</td><td>UUID of previous rule. This along with next field helps to insert a rule between those rules. If prev is None then this is the first rule</td><td>False</td>
-	</tr>
-	<tr>
-		<td>next</td><td>UUID of the next rule. Next will be None for the last rule</td><td>False</td>
-	</tr>
-	<tr>
-		<td>src-mac</td><td>Source MAC address. Specify a list of MACs </td><td>False</td>
-	</tr>
-	<tr>
-		<td>dst-mac</td><td>Destination MAC address. Specify List of MACs</td><td>False</td>
-	</tr>
-	<tr>
-		<td>vlan</td><td>VLAN of the packet. Specify a custom range and/or list of VLANs </td><td>False</td>
-	</tr>
-	<tr>
-		<td>version</td><td>IP version. Can set to to 4 for IPv4 and 6 for IPv6. Default must be IPv4 </td><td>False</td>
-	</tr>
-	<tr>
-		<td>src-addr</td><td>Source IP Address. Can be range with start and end specified or list of IP addresses or a subnet with mask or combination of them </td><td>False</td>
-	</tr>
-	<tr>
-		<td>dst-addr</td><td>Destination IP Address. Can be range with start and end specified or list of IP addresses or a subnet with mask or combination of them </td><td>False</td>
-	</tr>
-	<tr>
-		<td>protocol</td><td>IP Protocol. </td><td>False</td>
-	</tr>
-	<tr>
-		<td>src-port</td><td>TCP or UDP port. It can be range or list of ports</td><td>False</td>
-	</tr>
-	<tr>
-		<td>dst-port</td><td>TCP or UDP port. It can be range or list of ports</td><td>False</td>
-	</tr>
-	<tr>
-		<td>bypass</td><td>Action Bypass for the specified NS Appliance imagemap IDs</td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>imagemap-ids</td><td>List of NS Appliance Imagemap IDs</td><td>Yes</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th><th>Required</th>
+    </tr>
+    <tr>
+        <td>name</td><td>Name of the Network rule list </td><td>False</td>
+    </tr>
+    <tr>
+        <td>prev</td><td>UUID of previous rule. This along with next field helps to insert a rule between those rules. If prev is None then this is the first rule</td><td>False</td>
+    </tr>
+    <tr>
+        <td>next</td><td>UUID of the next rule. Next will be None for the last rule</td><td>False</td>
+    </tr>
+    <tr>
+        <td>src-mac</td><td>Source MAC address. Specify a list of MACs </td><td>False</td>
+    </tr>
+    <tr>
+        <td>dst-mac</td><td>Destination MAC address. Specify List of MACs</td><td>False</td>
+    </tr>
+    <tr>
+        <td>vlan</td><td>VLAN of the packet. Specify a custom range and/or list of VLANs </td><td>False</td>
+    </tr>
+    <tr>
+        <td>version</td><td>IP version. Can set to to 4 for IPv4 and 6 for IPv6. Default must be IPv4 </td><td>False</td>
+    </tr>
+    <tr>
+        <td>src-addr</td><td>Source IP Address. Can be range with start and end specified or list of IP addresses or a subnet with mask or combination of them </td><td>False</td>
+    </tr>
+    <tr>
+        <td>dst-addr</td><td>Destination IP Address. Can be range with start and end specified or list of IP addresses or a subnet with mask or combination of them </td><td>False</td>
+    </tr>
+    <tr>
+        <td>protocol</td><td>IP Protocol. </td><td>False</td>
+    </tr>
+    <tr>
+        <td>src-port</td><td>TCP or UDP port. It can be range or list of ports</td><td>False</td>
+    </tr>
+    <tr>
+        <td>dst-port</td><td>TCP or UDP port. It can be range or list of ports</td><td>False</td>
+    </tr>
+    <tr>
+        <td>bypass</td><td>Action Bypass for the specified NS Appliance imagemap IDs</td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>imagemap-ids</td><td>List of NS Appliance Imagemap IDs</td><td>Yes</td>
+    </tr>
 
 </table>
 
@@ -1679,12 +1679,12 @@ The following table describes the attributes that you can specify in the request
 #####4.5 Delete a Network Rule 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>DELETE </td><td>/nsappliances/rules/{rule_id}</td><td>Delete a specified Rule</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>DELETE </td><td>/nsappliances/rules/{rule_id}</td><td>Delete a specified Rule</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 204
@@ -1704,12 +1704,12 @@ This operation does not require a request body or return a response body.
 #####4.6 List network rule lists
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td>/nsappliances/rulelist </td><td>List all network rule lists </td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td>/nsappliances/rulelist </td><td>List all network rule lists </td>
+    </tr>
 </table>
 
 
@@ -1752,12 +1752,12 @@ Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavai
 #####4.7 Create a Network rule list
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>POST </td><td>/nsappliances/rulelist </td><td>Create a network rule lists </td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>POST </td><td>/nsappliances/rulelist </td><td>Create a network rule lists </td>
+    </tr>
 </table>
 
 Normal Response Code(s): 202
@@ -1771,15 +1771,15 @@ Note that rules are prioritized as per the order in the JSON request.
 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th><th>Required</th>
-	</tr>
-	<tr>
-		<td>name</td><td>Name of the Network rule list </td><td>No</td>
-	</tr>
-	<tr>
-		<td>rules</td><td>List of network rules in the order of priority</td><td>Yes</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th><th>Required</th>
+    </tr>
+    <tr>
+        <td>name</td><td>Name of the Network rule list </td><td>No</td>
+    </tr>
+    <tr>
+        <td>rules</td><td>List of network rules in the order of priority</td><td>Yes</td>
+    </tr>
 
 </table>
 
@@ -1812,12 +1812,12 @@ Note that rules are prioritized as per the order in the JSON request.
 #####4.8  Get details of a Network Rule list
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td>/nsappliances/rulelist/{rulelist_id} </td><td> List details of a specified Network rule list</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td>/nsappliances/rulelist/{rulelist_id} </td><td> List details of a specified Network rule list</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200, 203
@@ -1848,12 +1848,12 @@ This operation returns the details of a specific Network Rule list by its ID
 #####4.9 Update a network rule list
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>PUT </td><td> /nsapplainces/rulelist/{rulelist_id} </td><td>Update a specified Network rule list</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>PUT </td><td> /nsapplainces/rulelist/{rulelist_id} </td><td>Update a specified Network rule list</td>
+    </tr>
 </table>
 
 
@@ -1868,15 +1868,15 @@ The following table describes the attributes that you can specify in the request
 An important use of PUT on this object is to change the rule priorities. User can shuffle the rules and update them as per the needs.
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th><th>Required</th>
-	</tr>
-	<tr>
-		<td>name</td><td>Name of the Network rule list </td><td>False</td>
-	</tr>
-	<tr>
-		<td>rules</td><td>List of network rules in the order of priority</td><td>Yes</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th><th>Required</th>
+    </tr>
+    <tr>
+        <td>name</td><td>Name of the Network rule list </td><td>False</td>
+    </tr>
+    <tr>
+        <td>rules</td><td>List of network rules in the order of priority</td><td>Yes</td>
+    </tr>
 
 </table>
 
@@ -1911,12 +1911,12 @@ Example JSON Request
 #####4.10 Delete a Network Rule list 
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>DELETE </td><td>/nsappliances/rulelist/{rulelist_id}</td><td>Delete a specified Rule list </td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>DELETE </td><td>/nsappliances/rulelist/{rulelist_id}</td><td>Delete a specified Rule list </td>
+    </tr>
 </table>
 
 Normal Response Code(s): 204
@@ -1936,12 +1936,12 @@ This operation does not require a request body or return a response body.
 #####5.1  List a transparent NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td> /nsapplainces/transparentchains </td><td>List all NS Appliance Transparent Chains</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td> /nsapplainces/transparentchains </td><td>List all NS Appliance Transparent Chains</td>
+    </tr>
 </table>
 Normal Response Code(s): 200, 203
 
@@ -1966,32 +1966,32 @@ Error Response Codes(s): computeFault (400, 500), serviceUnavailable (503), unau
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
-					"config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
+                                "config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
+                            }
                         ]
                         
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
-					"config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
+                                "config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
+                            }
                         ]
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
-					"config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
+                                "config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
+                            }
                         ]
                         
                     }
@@ -2012,11 +2012,11 @@ Error Response Codes(s): computeFault (400, 500), serviceUnavailable (503), unau
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "c9431d2e-4032-44ca-9fe6-f293a0cd8813",
-					"config-id": "6b31bd8f-4f2d-46bf-8303-76f341ced23c"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "c9431d2e-4032-44ca-9fe6-f293a0cd8813",
+                                "config-id": "6b31bd8f-4f2d-46bf-8303-76f341ced23c"
+                            }
                         ]
                         
                     }
@@ -2033,12 +2033,12 @@ Error Response Codes(s): computeFault (400, 500), serviceUnavailable (503), unau
 #####5.2  Create a transparent NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>POST </td><td>/nsappliances/transparentchains </td><td> Create a NS Appliance Transparent Chain</td>
-	</tr> 
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>POST </td><td>/nsappliances/transparentchains </td><td> Create a NS Appliance Transparent Chain</td>
+    </tr> 
 </table>
 
 Normal Response Code(s): 202
@@ -2050,39 +2050,39 @@ This operation creates a NS Appliance Transparent Chain. Each Transparent Chain 
 The following table describes the required and optional attributes that you can specify in the request body.
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th><th>Required</th>
-	</tr>
-	<tr>
-		<td>name</td><td> Name of the transparent NS Appliance Chain </td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>chain-id</td><td>Create a NS Appliance Chain as specified by this chain model</td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>networks</td><td>Create a NS Appliance Chain between the networks specified. Must supply only two network-ids</td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>rulelist-id</td><td>A list of network rule list. Specify the rule list ID</td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>imagemap-id</td><td> NS Appliance image map id to use for the Appliance </td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>configs</td><td> NS Appliance Configuration list for each network function of the appliance </td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>max-instances</td><td> number of instances to run per appliance cluster. If not specified, default value is 1 </td><td>No</td>
-	</tr>
-	<tr>
-		<td>flavorref</td><td> Flavor to use for the NS Appliance. If not specified the default values specified in image map are taken</td><td>No</td>
-	</tr>
-	<tr>
-		<td>metadata </td><td> Metadata to supply to the NS Appliance instance. Default content overwritten if provided</td><td>No</td>
-	</tr>
-	<tr>
-		<td>personality</td><td>Personality files to inject to NS Appliance instance. Default content overwritten if provided </td><td>No</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th><th>Required</th>
+    </tr>
+    <tr>
+        <td>name</td><td> Name of the transparent NS Appliance Chain </td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>chain-id</td><td>Create a NS Appliance Chain as specified by this chain model</td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>networks</td><td>Create a NS Appliance Chain between the networks specified. Must supply only two network-ids</td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>rulelist-id</td><td>A list of network rule list. Specify the rule list ID</td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>imagemap-id</td><td> NS Appliance image map id to use for the Appliance </td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>configs</td><td> NS Appliance Configuration list for each network function of the appliance </td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>max-instances</td><td> number of instances to run per appliance cluster. If not specified, default value is 1 </td><td>No</td>
+    </tr>
+    <tr>
+        <td>flavorref</td><td> Flavor to use for the NS Appliance. If not specified the default values specified in image map are taken</td><td>No</td>
+    </tr>
+    <tr>
+        <td>metadata </td><td> Metadata to supply to the NS Appliance instance. Default content overwritten if provided</td><td>No</td>
+    </tr>
+    <tr>
+        <td>personality</td><td>Personality files to inject to NS Appliance instance. Default content overwritten if provided </td><td>No</td>
+    </tr>
 
 </table>
 
@@ -2105,32 +2105,32 @@ Transparent service chain should have two network entities.
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
-					"config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
+                                "config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
+                            }
                         ]
                         
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
-					"config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
+                                "config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
+                            }
                         ]
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
-					"config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
+                                "config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
+                            }
                         ]
                         
                     }
@@ -2154,32 +2154,32 @@ Transparent service chain should have two network entities.
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
-					"config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
+                                "config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
+                            }
                         ]
                         
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
-					"config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
+                                "config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
+                            }
                         ]
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
-					"config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
+                                "config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
+                            }
                         ]
                         
                     }
@@ -2193,12 +2193,12 @@ Transparent service chain should have two network entities.
 #####5.3  Get details of a transparent NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td>/nsappliances/transparentchains/{chain_id} </td><td> List details of a specified Transparent NS Appliance Chain</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td>/nsappliances/transparentchains/{chain_id} </td><td> List details of a specified Transparent NS Appliance Chain</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200, 203
@@ -2229,32 +2229,32 @@ This operation returns the details of a specific Network Service Appliance Trans
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
-					"config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
+                                "config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
+                            }
                         ]
                         
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
-					"config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
+                                "config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
+                            }
                         ]
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
-					"config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
+                                "config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
+                            }
                         ]
                         
                     }
@@ -2266,16 +2266,16 @@ This operation returns the details of a specific Network Service Appliance Trans
 
 
 
-		
+        
 #####5.4  Update a transparent NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>PUT </td><td>/nsappliances/transparentchains/{id} </td><td> Update a specified NS Appliance Transparent Chain</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>PUT </td><td>/nsappliances/transparentchains/{id} </td><td> Update a specified NS Appliance Transparent Chain</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200
@@ -2289,37 +2289,37 @@ Specify the Network Service Appliance Transparent Chain ID as id in the URI.
 The following table describes the attributes that you can specify in the request body:
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>name </td><td>You can change the NS Appliances Chain name </td><td>False</td>
-	</tr>
-	<tr>
-		<td>networks</td><td>Change the network-ids that should have this chain</td><td>False</td>
-	</tr>
-	</tr>
-	<tr>
-		<td>rulelist-id</td><td>Change the Network rule list ID for this chain</td><td>False</td>
-	</tr>
-	<tr>
-		<td>imagemap-id</td><td> NS Appliance image map id to use for the Appliance </td><td>False</td>
-	</tr>
-	<tr>
-		<td>configs</td><td> NS Appliance Configuration list for each network function of the appliance </td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>max-instances</td><td> number of instances to run per appliance cluster. If not specified, default value is 1 </td><td>No</td>
-	</tr>
-	<tr>
-		<td>flavorref</td> Flavor to use for the NS Appliance. If not specified the default values specified in image map are taken <td></td><td>No</td>
-	</tr>
-	<tr>
-		<td>metadata </td><td> Metadata to supply to the NS Appliance instance. Default content overwritten if provided</td><td>No</td>
-	</tr>
-	<tr>
-		<td>personality</td><td>Personality files to inject to NS Appliance instance. Default content overwritten if provided </td><td>No</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>name </td><td>You can change the NS Appliances Chain name </td><td>False</td>
+    </tr>
+    <tr>
+        <td>networks</td><td>Change the network-ids that should have this chain</td><td>False</td>
+    </tr>
+    </tr>
+    <tr>
+        <td>rulelist-id</td><td>Change the Network rule list ID for this chain</td><td>False</td>
+    </tr>
+    <tr>
+        <td>imagemap-id</td><td> NS Appliance image map id to use for the Appliance </td><td>False</td>
+    </tr>
+    <tr>
+        <td>configs</td><td> NS Appliance Configuration list for each network function of the appliance </td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>max-instances</td><td> number of instances to run per appliance cluster. If not specified, default value is 1 </td><td>No</td>
+    </tr>
+    <tr>
+        <td>flavorref</td> Flavor to use for the NS Appliance. If not specified the default values specified in image map are taken <td></td><td>No</td>
+    </tr>
+    <tr>
+        <td>metadata </td><td> Metadata to supply to the NS Appliance instance. Default content overwritten if provided</td><td>No</td>
+    </tr>
+    <tr>
+        <td>personality</td><td>Personality files to inject to NS Appliance instance. Default content overwritten if provided </td><td>No</td>
+    </tr>
 </table>
 
 When network-ids gets changed, the implementation must terminate the NS Appliances for the old networks and create the NS Appliance chain between
@@ -2349,9 +2349,9 @@ If the nsappliances details gets changed, the instance has to terminated and re-
                 "name": "first transparent chain",
                 "chain-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                 "net-info": {
-                    "networks": [
+                    "networks": [                        
                         "3f8692d1-61aa-42ca-8967-fde1a5d0f084",
-                        "7241ea6d-1e35-4f21-83cc-e942a70e9dfd"
+                        "7241ea6d-1e35-4f21-83cc-e942a70e9dfd""
                     ]
                 },
                 "rulelist-id": "66f9746e-ad49-4a6f-a3fe-625b63e159f0",
@@ -2359,32 +2359,32 @@ If the nsappliances details gets changed, the instance has to terminated and re-
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
-					"config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "7bc20e80-9af0-11e2-9e96-0800200c9a66",
+                                "config-id": "9eba8119-2d0a-4210-bc26-9d3bad77e10f"
+                            }
                         ]
                         
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
-					"config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "519a2b28-6a10-4833-abbe-51f0f149fb6f",
+                                "config-id": "f62d5aed-7014-49d8-8fab-8a427c9592b5"
+                            }
                         ]
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
-					"config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "3773d164-0b96-4c68-8c22-9642d55cc7b3",
+                                "config-id": "7ef1fa64-9376-472b-99d9-31b2a4591acd"
+                            }
                         ]
                         
                     }
@@ -2398,12 +2398,12 @@ If the nsappliances details gets changed, the instance has to terminated and re-
 #####5.5  Delete a transparent NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>DELETE </td><td>/nsappliances/transparentchains/id </td><td> Delete a specified Network Service Appliance Transparent Chain</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>DELETE </td><td>/nsappliances/transparentchains/id </td><td> Delete a specified Network Service Appliance Transparent Chain</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 204
@@ -2427,12 +2427,12 @@ Implementation must terminate the NS Appliances created as part of this Chain, d
 #####6.1  List all routed NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td> /nsapplainces/routedchains </td><td>List all NS Appliance Routed Chains</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td> /nsapplainces/routedchains </td><td>List all NS Appliance Routed Chains</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200, 203
@@ -2465,22 +2465,22 @@ Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavai
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "940e2cdf-5173-475c-90b1-795590235119",
-					"config-id": "84182baf-a342-4951-821c-aba23d6d73d9"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "940e2cdf-5173-475c-90b1-795590235119",
+                                "config-id": "84182baf-a342-4951-821c-aba23d6d73d9"
+                            }
                         ]
                         
                     },
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "1eaa45eb-43e3-467a-a10b-14a8bcdea1b7",
-					"config-id": "024d863b-6deb-4f76-8351-c61c0b1cd99d"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "1eaa45eb-43e3-467a-a10b-14a8bcdea1b7",
+                                "config-id": "024d863b-6deb-4f76-8351-c61c0b1cd99d"
+                            }
                         ]
                         
                     }
@@ -2509,11 +2509,11 @@ Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavai
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
-					"config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
+                                "config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
+                            }
                         ]
                         
                     }
@@ -2528,51 +2528,51 @@ Error Response Codes(s): computeFault (400, 500, Ã¢â‚¬Â¦), serviceUnavai
 #####6.2  create a routed NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>POST </td><td> /nsapplainces/routedchains </td><td>Create a NS Appliance Routed Chains</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>POST </td><td> /nsapplainces/routedchains </td><td>Create a NS Appliance Routed Chains</td>
+    </tr>
 </table>
 
 The following table describes the required and optional attributes that you can specify in the request body.
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th><th>Required</th>
-	</tr>
-	<tr>
-		<td>name</td><td>Name of the routed chain </td><td>False</td>
-	</tr>
-	<tr>
-		<td>networks</td><td> Provide a set of networks for which the network services are required</td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>ruelist-id</td><td>List of network rules for setting up action bypass</td><td>Yes</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th><th>Required</th>
+    </tr>
+    <tr>
+        <td>name</td><td>Name of the routed chain </td><td>False</td>
+    </tr>
+    <tr>
+        <td>networks</td><td> Provide a set of networks for which the network services are required</td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>ruelist-id</td><td>List of network rules for setting up action bypass</td><td>Yes</td>
+    </tr>
 
     <tr>
-		<td>internal-subnetid</td><td> Subnet id to be used for creating internal networks</td><td>Yes</td>
-	</tr>
+        <td>internal-subnetid</td><td> Subnet id to be used for creating internal networks</td><td>Yes</td>
+    </tr>
     <tr>
-		<td>imagemap-id</td><td> Image to be used for the appliance</td><td>Yes</td>
-	</tr>
+        <td>imagemap-id</td><td> Image to be used for the appliance</td><td>Yes</td>
+    </tr>
     <tr>
-	<tr>
-		<td>configs</td><td> NS Appliance Configuration list for each network function of the appliance </td><td>Yes</td>
-	</tr>
-		<td>max-instances</td><td> number of appliances in the cluster </td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>flavorref</td><td>Flavor to use for the appliance. Overwrites the default flavor set in the image map </td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>metadata</td><td> metadata to pass to the appliance </td><td>Yes</td>
-	</tr>
     <tr>
-		<td>personality</td><td>personality files to inject to the appliance </td><td>Yes</td>
-	</tr>
+        <td>configs</td><td> NS Appliance Configuration list for each network function of the appliance </td><td>Yes</td>
+    </tr>
+        <td>max-instances</td><td> number of appliances in the cluster </td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>flavorref</td><td>Flavor to use for the appliance. Overwrites the default flavor set in the image map </td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>metadata</td><td> metadata to pass to the appliance </td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>personality</td><td>personality files to inject to the appliance </td><td>Yes</td>
+    </tr>
 </table>
 
 Implementation creates a chain of Network appliances between the networks configured. It uses the internal subnet-id to create intermediate subnets needed for L3 routing of the packets.
@@ -2582,9 +2582,7 @@ Implementation creates a chain of Network appliances between the networks config
 
 
             {
-
                 "name": "a second routed chain",
- 
                 "net-info": {
                     "networks": [
                         {
@@ -2603,11 +2601,11 @@ Implementation creates a chain of Network appliances between the networks config
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
-					"config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
+                                "config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
+                            }
                         ]
                         
                     }
@@ -2619,7 +2617,6 @@ Implementation creates a chain of Network appliances between the networks config
             {
                 "id": "e84eb701-ccbf-42f3-82ff-80d83e38e1bb",
                 "name": "a second routed chain",
- 
                 "net-info": {
                     "networks": [
                         {
@@ -2638,11 +2635,11 @@ Implementation creates a chain of Network appliances between the networks config
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
-					"config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
+                                "config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
+                            }
                         ]
                         
                     }
@@ -2655,12 +2652,12 @@ Implementation creates a chain of Network appliances between the networks config
 #####3.7.3  Get details of routed NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>GET </td><td>/nsappliances/routedchains/{chain_id} </td><td> List details of a specified Routed NS Appliance Chain</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>GET </td><td>/nsappliances/routedchains/{chain_id} </td><td> List details of a specified Routed NS Appliance Chain</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200, 203
@@ -2675,11 +2672,9 @@ This operation returns the details of a specific Network Service Appliance Route
 
 *Example JSON response*
 
-
             {
                 "id": "e84eb701-ccbf-42f3-82ff-80d83e38e1bb",
                 "name": "a second routed chain",
- 
                 "net-info": {
                     "networks": [
                         {
@@ -2698,11 +2693,11 @@ This operation returns the details of a specific Network Service Appliance Route
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
-					"config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
+                                "config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
+                            }
                         ]
                         
                     }
@@ -2710,23 +2705,15 @@ This operation returns the details of a specific Network Service Appliance Route
             }
 
 
-
-
-
-
-
-
-
-
 #####6.4  Update a routed NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>PUT </td><td>/nsappliances/routedchains/{id} </td><td> Update a specified NS Appliance Routed Chain</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>PUT </td><td>/nsappliances/routedchains/{id} </td><td> Update a specified NS Appliance Routed Chain</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 200
@@ -2740,42 +2727,42 @@ Specify the Network Service Appliance Routed Chain ID as id in the URI.
 The following table describes the attributes that you can specify in the request body:
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Name</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>name </td><td>You can change the NS Appliances Chain name </td></td><td>False</td>
-	</tr>
-	<tr>
-		<td>networks</td><td>Change the network-ids that should have this chain</td></td><td>False</td>
-	</tr>
-	<tr>
-		<td>rulelist-id</td><td>Change the rule list</td></td><td>False</td>
-	</tr>
-	<tr>
-		<td>subnets</td><td>Change the subnet-ids that should have this chain</td></td><td>False</td>
-	</tr>
-	<tr>
-		<td>internal-subnet</td><td>Change the internalsubnet-id that this chain use</td><td>False</td>
-	</tr>
-	<tr>
-		<td>imagemap-id</td><td> NS Appliance image map id to use for the Appliance </td><td>False</td>
-	</tr>
-	<tr>
-		<td>configs</td><td> NS Appliance Configuration list for each network function of the appliance </td><td>Yes</td>
-	</tr>
-	<tr>
-		<td>max-instaces</td><td> number of instances to run per appliance cluster. If not specified, default value is 1 </td><td>No</td>
-	</tr>
-	<tr>
-		<td>flavorref</td> Flavor to use for the NS Appliance. If not specified the default values specified in image map are taken <td></td><td>No</td>
-	</tr>
-	<tr>
-		<td>metadata </td><td> Metadata to supply to the NS Appliance instance. Default content overwritten if provided</td><td>No</td>
-	</tr>
-	<tr>
-		<td>personality</td><td>Personality files to inject to NS Appliance instance. Default content overwritten if provided </td><td>No</td>
-	</tr>
+    <tr>
+        <th>Name</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>name </td><td>You can change the NS Appliances Chain name </td></td><td>False</td>
+    </tr>
+    <tr>
+        <td>networks</td><td>Change the network-ids that should have this chain</td></td><td>False</td>
+    </tr>
+    <tr>
+        <td>rulelist-id</td><td>Change the rule list</td></td><td>False</td>
+    </tr>
+    <tr>
+        <td>subnets</td><td>Change the subnet-ids that should have this chain</td></td><td>False</td>
+    </tr>
+    <tr>
+        <td>internal-subnet</td><td>Change the internalsubnet-id that this chain use</td><td>False</td>
+    </tr>
+    <tr>
+        <td>imagemap-id</td><td> NS Appliance image map id to use for the Appliance </td><td>False</td>
+    </tr>
+    <tr>
+        <td>configs</td><td> NS Appliance Configuration list for each network function of the appliance </td><td>Yes</td>
+    </tr>
+    <tr>
+        <td>max-instaces</td><td> number of instances to run per appliance cluster. If not specified, default value is 1 </td><td>No</td>
+    </tr>
+    <tr>
+        <td>flavorref</td> Flavor to use for the NS Appliance. If not specified the default values specified in image map are taken <td></td><td>No</td>
+    </tr>
+    <tr>
+        <td>metadata </td><td> Metadata to supply to the NS Appliance instance. Default content overwritten if provided</td><td>No</td>
+    </tr>
+    <tr>
+        <td>personality</td><td>Personality files to inject to NS Appliance instance. Default content overwritten if provided </td><td>No</td>
+    </tr>
 </table>
 
 When network-ids gets changed, the implementation must terminate the NS Appliances for the old networks and create the NS Appliance chain between
@@ -2786,18 +2773,16 @@ the new networks.
            {
                 "id": "e84eb701-ccbf-42f3-82ff-80d83e38e1bb",
                 "name": "a custom routed chain",
-
-                "rulelist-id" : "9241c37f-25b5-4d92-bb3c-a66b2c112789",
-                
+                "rulelist-id" : "9241c37f-25b5-4d92-bb3c-a66b2c112789"
+     
             }
 
     
 *Update NS Routed Chain JSON Response*
 
-             {
+            {
                 "id": "e84eb701-ccbf-42f3-82ff-80d83e38e1bb",
                 "name": "a second routed chain",
- 
                 "net-info": {
                     "networks": [
                         {
@@ -2816,11 +2801,11 @@ the new networks.
                     {
                         "imagemap-id": "36b63baa-8010-4873-b040-1d886e39fd8b",
                         "max-instances":1,
-			"configs": [
-				{
-					"networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
-					"config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
-				}
+                        "configs": [
+                            {
+                                "networkfunction-id": "f8d79ffd-510c-4d53-aec5-9cec78f3623c",
+                                "config-id": "42fb05ff-a626-4078-a393-ef4eceb6d33f"
+                            }
                         ]
                         
                     }
@@ -2832,15 +2817,16 @@ the new networks.
 
 
 
+
 #####6.5  Delete a routed NS Appliance Chain
 
 <table cellspacing = 30  >
-	<tr>
-		<th>Verb</th><th>URI</th><th>Description</th>
-	</tr>
-	<tr>
-		<td>DELETE </td><td>/nsappliances/routedchains/id </td><td> Delete a specified Network Service Appliance Routed Chain</td>
-	</tr>
+    <tr>
+        <th>Verb</th><th>URI</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>DELETE </td><td>/nsappliances/routedchains/id </td><td> Delete a specified Network Service Appliance Routed Chain</td>
+    </tr>
 </table>
 
 Normal Response Code(s): 204

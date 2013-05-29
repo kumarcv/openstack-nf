@@ -1,0 +1,16 @@
+{% load i18n sizeformat %}
+
+<h3>{% trans "Chain Overview" %}</h3>
+
+<div class="info detail">
+  <dl>
+    <dt>{% trans "Name" %}</dt>
+    <dd>{{ chain.name|default:"None" }}</dd>
+    <dt>{% trans "ID" %}</dt>
+    <dd>{{ chain.id|default:"None" }}</dd>
+    <dt>{% trans "Type" %}</dt>
+    <dd>{{ chain.type|default:"None" }}</dd>
+    <dt>{% trans "Auto Boot" %}</dt>
+    <dd>{{ chain.auto_boot|default:"None" }}</dd>
+  </dl>
+</div>

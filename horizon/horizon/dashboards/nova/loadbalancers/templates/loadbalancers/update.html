@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Update Configuration" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Update Configuration") %}
+{% endblock page_header %}
+
+{% block main %}
+  {% include 'nova/loadbalancers/_update.html' %}
+{% endblock %}

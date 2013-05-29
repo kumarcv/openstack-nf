@@ -1,0 +1,18 @@
+{% load i18n sizeformat %}
+
+<h3>{% trans "Chain Overview" %}</h3>
+
+<div class="info detail">
+  <dl>
+    <dt>{% trans "Name" %}</dt>
+    <dd>{{ chain_image.name|default:"None" }}</dd>
+    <dt>{% trans "ID" %}</dt>
+    <dd>{{ chain_image.id|default:"None" }}</dd>
+    <dt>{% trans "Image" %}</dt>
+    <dd>{{ chain_image.image_map_id|default:"None" }}</dd>
+    <dt>{% trans "Image UUID" %}</dt>
+    <dd>{{ chain_image.image_map_id|default:"None" }}</dd>
+    <dt>{% trans "Sequence Number" %}</dt>
+    <dd>{{ chain_image.sequence_number|default:"None" }}</dd>
+  </dl>
+</div>

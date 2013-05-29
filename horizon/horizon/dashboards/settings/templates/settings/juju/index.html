@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Download Juju Environment Config" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Download Juju Environment Config") %}
+{% endblock page_header %}
+
+{% block main %}
+  {% include "settings/juju/download_form.html" %}
+{% endblock %}

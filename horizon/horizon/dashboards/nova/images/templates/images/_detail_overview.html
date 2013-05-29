@@ -1,0 +1,89 @@
+{% load i18n sizeformat %}
+
+<h3>{% trans "Image Map Overview" %}</h3>
+
+<div class="info row-fluid detail">
+  <h4>{% trans "Image" %}</h4>
+  <hr class="header_rule">
+  <dl>
+    <dt>{% trans "Name" %} : </dt>
+    <dd>{{ image.name|default:"None" }}</dd>
+    <dt>{% trans "ID" %}</dt>
+    <dd>{{ image.id|default:"None" }}</dd>
+    <dt>{% trans "Category" %} : {{ image.category.name|default:"None" }}</dt>
+    <dd>UUID : {{ image.category.id|default:"None" }}</dd>
+    <dt>{% trans "Vendor" %} : {{ image.vendor.name|default:"None" }}</dt>
+    <dd>UUID : {{ image.vendor.id|default:"None" }}</dd>
+      
+  </dl>
+</div>
+
+<div class="specs row-fluid detail">
+  <h4>{% trans "Flavor Details" %}</h4>
+  <hr class="header_rule">
+  <dl>
+    <dt>{% trans "Id" %}</dt>
+    <dd>{{ image.full_flavor.id }}</dd>
+    <dt>{% trans "Flavor" %}</dt>
+    <dd>{{ image.full_flavor.name }}</dd>
+    <dt>{% trans "RAM" %}</dt>
+    <dd>{{ image.full_flavor.ram|mbformat }}</dd>
+    <dt>{% trans "VCPUs" %}</dt>
+    <dd>{{ image.full_flavor.vcpus }} {% trans "VCPU" %}</dd>
+    <dt>{% trans "Disk" %}</dt>
+    <dd>{{ image.full_flavor.disk }}{% trans "GB" %}</dd>
+  </dl>
+</div>
+
+<div class="specs row-fluid detail">
+  <h4>{% trans "Security Group" %}</h4>
+  <hr class="header_rule">
+  <dl>
+    <dt>{% trans "Id" %}</dt>
+    <dd>{{ image.security_group.id }}</dd>
+    <dt>{% trans "Name" %}</dt>
+    <dd>{{ image.security_group.name }}</dd>
+    
+  </dl>
+</div>
+
+<div class="specs row-fluid detail">
+  <h4>{% trans "Glance Image" %}</h4>
+  <hr class="header_rule">
+  <dl>
+    <dt>{% trans "Id" %}</dt>
+    <dd>{{ image.glance_image.id }}</dd>
+    {% url horizon:nova:images_and_snapshots:images:detail image.glance_image.id as image_url %}
+    <dt>{% trans "Name" %}</dt>
+    <dd><a href="{{ image_url }}">{{ image.glance_image.name }}</a></dd>
+    
+  </dl>
+</div>
+
+<div class="specs row-fluid detail">
+  <h4>{% trans "Metadata" %}</h4>
+  <hr class="header_rule">
+  <dl>
+    <dt>{% trans "Id" %}</dt>
+    <dd>{{ image.metadata.id }}</dd>
+    <dt>{% trans "Name" %}</dt>
+    <dd>{{ image.metadata.name }}</dd>
+    <dt>{% trans "Value" %}</dt>
+    <dd>{{ image.metadata.value }}</dd>
+    
+  </dl>
+</div>
+
+<div class="specs row-fluid detail">
+  <h4>{% trans "Personality" %}</h4>
+  <hr class="header_rule">
+  <dl>
+    <dt>{% trans "Id" %}</dt>
+    <dd>{{ image.personality.id }}</dd>
+    <dt>{% trans "File Path" %}</dt>
+    <dd>{{ image.personality.file_path }}</dd>
+    <dt>{% trans "File Content" %}</dt>
+    <dd>{{ image.personality.file_content }}</dd>
+    
+  </dl>
+</div>

@@ -1,0 +1,25 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+
+{% block form_id %}create_chain_form{% endblock %}
+{% block form_action %}{% url horizon:nova:chains:launch chain_id %}{% endblock %}
+
+{% block modal-header %}{% trans "Launch Chain" %}{% endblock %}
+{% block modal_id %}create_chain_modal{% endblock %}
+
+{% block modal-body %}
+<div class="left">
+    <fieldset>
+        <div id="chiandetail" style="display:none">
+            {% include "horizon/common/_form_fields.html" %}
+        </div>
+    Are you sure , you want to launch chain
+    </fieldset>
+</div>
+
+{% endblock %}
+
+{% block modal-footer %}
+  <input class="btn btn-primary pull-right" type="submit" value="{% trans "Yes" %}" />
+  <a href="{% url horizon:nova:chains:index %}" class="btn secondary cancel close">{% trans "No" %}</a>
+{% endblock %}

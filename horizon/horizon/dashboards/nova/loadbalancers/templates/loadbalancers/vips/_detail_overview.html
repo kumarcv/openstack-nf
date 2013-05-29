@@ -1,0 +1,21 @@
+{% load i18n sizeformat %}
+
+<h3>{% trans "DHCP Configuration Overview" %}</h3>
+
+<div class="info row-fluid detail">
+  <hr class="header_rule">
+  <dl>
+    <dt>{% trans "Subnet" %}</dt>
+    <dd>{{ config.subnet|default:"None" }}</dd>
+    <dt>{% trans "ID" %}</dt>
+    <dd>{{ config.id|default:"None" }}</dd>
+    <dt>{% trans "Service ID" %}</dt>
+    <dd>{{ config.service_id|default:"None" }}</dd>
+    <dt>{% trans "Netmask" %}</dt>
+    <dd>{{ config.netmask|default:"None" }}</dd>
+    <dt>{% trans "Start IP" %}</dt>
+    <dd>{{ config.start_ip|default:"-" }}</dd>
+    <dt>{% trans "End IP" %}</dt>
+    <dd>{{ config.end_ip|default:"-" }}</dd>
+  </dl>
+</div>

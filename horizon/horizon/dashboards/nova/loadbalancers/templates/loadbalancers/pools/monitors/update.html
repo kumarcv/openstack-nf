@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Update Health Monitor" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Update Health Monitor") %}
+{% endblock page_header %}
+
+{% block main %}
+  {% include 'nova/loadbalancers/pools/monitors/_update.html' %}
+{% endblock %}

@@ -1,0 +1,21 @@
+# To use Juju with your Openstack cloud:
+#    1. Run: apt-get install juju
+#    2. Copy this file to $HOME/.juju/environments.yaml
+#    3. Modify the 'default-image-id' to match an Ubuntu cloud image
+#       AMI that has been published to your cloud.
+#    4. Run 'juju bootstrap' and deploy services!
+#
+# To find out more about juju visit http://juju.ubuntu.com
+
+juju: environments
+environments:
+  openstack:
+    type: ec2
+    control-bucket: {{ control_bucket }}
+    admin-secret: {{ juju_admin_secret }}
+    access-key: {{ ec2_access_key }}
+    secret-key: {{ ec2_secret_key }}
+    ec2-uri: {{ ec2_url }}
+    s3-uri: {{ s3_url }}
+    default-series: precise
+    default-image-id: ami-00000001

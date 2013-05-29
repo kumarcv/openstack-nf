@@ -1,0 +1,1 @@
+# Horizon Juju settings panel

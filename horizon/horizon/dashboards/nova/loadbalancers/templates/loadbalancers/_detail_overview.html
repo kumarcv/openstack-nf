@@ -1,0 +1,18 @@
+{% load i18n sizeformat %}
+
+<h3>{% trans "Configuration Overview" %}</h3>
+
+<div class="info detail">
+  <dl>
+    <dt>{% trans "Name" %}</dt>
+    <dd>{{ configuration.name|default:"None" }}</dd>
+    <dt>{% trans "ID" %}</dt>
+    <dd>{{ configuration.id|default:"None" }}</dd>
+    <dt>{% trans "Project ID" %}</dt>
+    <dd>{{ configuration.tenant_id|default:"-" }}</dd>
+    <dt>{% trans "Status" %}</dt>
+    <dd>{{ configuration.status|default:"Unknown" }}</dd>
+    <dt>{% trans "Category" %}</dt>
+    <dd>{{ configuration.category|default:"Unknown" }}</dd>
+  </dl>
+</div>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Chain Detail"%}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Chain Detail: ")|add:chain_image.name %}
+{% endblock page_header %}
+
+{% block main %}
+  {% include "nova/chains/chain_images/_detail_overview.html" %}
+  <hr>
+  <div id="subnets">
+    {{ chain_image_networks_table.render }}
+  </div>
+
+  <hr>
+  <div id="subnets">
+    {{ chain_image_confs_table.render }}
+  </div>
+{% endblock %}

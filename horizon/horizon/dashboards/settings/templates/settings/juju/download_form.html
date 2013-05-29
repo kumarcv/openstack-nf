@@ -1,0 +1,20 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+
+
+{% block modal-body %}
+<div class="left">
+    <fieldset>
+    {% include "horizon/common/_form_fields.html" %}
+    </fieldset>
+</div>
+<div class="right">
+    <h3>{% trans "Description:" %}</h3>
+    <p>{% trans 'Clicking "Download Juju Environment Config" will download a file which includes a Juju environment configured for your cloud.<br><center><img src='/static/dashboard/img/juju.png'></center><br>To find out more about Juju visit <a href='http://juju.ubuntu.com'>http://juju.ubuntu.com</a>' %}</p>
+</div>
+{% endblock %}
+
+{% block modal-footer %}
+    <input class="btn btn-primary pull-right" type="submit" value="{% trans "Download Juju Environment Config" %}" />
+    {% if hide %}<a href="{% url horizon:settings:juju:index %}" class="btn secondary cancel close">{% trans "Cancel" %}</a>{% endif %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% load i18n sizeformat %}
+
+<h3>{% trans "Pool Overview" %}</h3>
+
+<div class="info detail">
+  <dl>
+    <dt>{% trans "Name" %}</dt>
+    <dd>{{ pool.name|default:"None" }}</dd>
+    <dt>{% trans "ID" %}</dt>
+    <dd>{{ pool.id|default:"None" }}</dd>
+    <dt>{% trans "Project ID" %}</dt>
+    <dd>{{ pool.tenant_id|default:"-" }}</dd>
+    <dt>{% trans "Status" %}</dt>
+    <dd>{{ pool.status|default:"Unknown" }}</dd>
+    <dt>{% trans "Subnet" %}</dt>
+    <dd>{{ pool.subnet|default:"Unknown" }}</dd>
+  </dl>
+</div>

@@ -1,0 +1,14 @@
+This file will have all the details of compute node source code changes for all the openstack components installed on board to make it as compute node.
+
+i) config:
+
+   a) quantum.conf - This file has to be replaced in the path "/etc/quantum".
+   b) relay-agent.ini - This file has to be copied in the path "/etc/quantum/plugins/services/nwservices".
+
+   *Note: New directory 'nwservices' has to be created in the path "/etc/quantum/plugins/services" for placing configuration files required for network services plugin.
+
+ii) Nova:
+
+  a) config.py - 
+  b) dirver.py - 
+  c) vif.py - 

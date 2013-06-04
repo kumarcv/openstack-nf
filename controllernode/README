@@ -1,0 +1,14 @@
+This file will have all the details of directories and files required for controller node of OpenStack setup.
+
+i) Config :
+
+  a) quantum.conf - This file has to be replaced in the path '/etc/quantum'.
+  b) quantum-server - This file has to be replaced in the path '/etc/default'.
+  c) quantum-server.conf - This file has to be replaced in the patch '/etc/init'.
+
+
+   *Note: Create a new directory 'schedulers' in the path '/etc/quantum'.
+
+ d) loadbalancer_scheduler.ini - Copy this file to the path '/etc/quantum/schedulers'.
+ e) nwservices_scheduler.ini - Copy this file to the path '/etc/quantum/schedulers'.
+

@@ -8,7 +8,11 @@ i) config:
    *Note: New directory 'nwservices' has to be created in the path "/etc/quantum/plugins/services" for placing configuration files required for network services plugin.
 
 ii) Nova:
+ Replace the below files in the path '/usr/lib/python2.7/site-packages/nova-2013.1.1-py2.7.egg/nova/virt/libvirt'.
 
-  a) config.py - 
-  b) dirver.py - 
-  c) vif.py - 
+  a) config.py
+  b) dirver.py
+  c) vif.py
+
+*Note: Above files are required only for Freescale platforms using SDK 1.2 to en
+able them as OpenStack Compute Node.
